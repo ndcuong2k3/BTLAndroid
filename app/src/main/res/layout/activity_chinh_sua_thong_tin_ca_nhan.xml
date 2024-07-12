@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chỉnh sửa thông tin cá nhân"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:fontFamily="@font/archivonarrow"
+        android:textStyle="bold"
+        >
+
+    </TextView>
+    <!-- Tạo layout XML cho dialog -->
+    <LinearLayout
+        android:id="@+id/dialogLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên:       "
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/edHoVaTen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Nhap Ho Va Ten"
+                android:fontFamily="@font/archivonarrow"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại:"
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/edSDT"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Nhap SDT"
+                android:fontFamily="@font/archivonarrow"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:              "
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/edEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:hint="NhapNX"
+                android:fontFamily="@font/archivonarrow"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lưu"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_button"/>
+
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Hủy"
+                android:background="@drawable/rounded_button"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

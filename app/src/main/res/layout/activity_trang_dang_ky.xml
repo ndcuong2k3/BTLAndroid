@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangDangKy"
+    android:padding="16dp"
+    android:background="#FEFEFC">
+    <TextView
+        android:id="@+id/textDangKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG KÝ"
+        android:textSize="42sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/anton"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/textDangKy"
+        android:layout_marginTop="16dp"
+        android:hint="Nhập email của bạn"
+        android:padding="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/editHoTen"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="8dp"
+        android:hint="Nhập họ tên của bạn"
+        android:padding="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp" />
+    <EditText
+        android:id="@+id/editSDT"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/editHoTen"
+        android:layout_marginTop="8dp"
+        android:hint="Nhập SDT của bạn"
+        android:padding="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp" />
+    <LinearLayout
+        android:id="@+id/editNgaysinh"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editSDT"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editChonNgaysinh"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint=" Chọn ngày sinh"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/buttonDatePicker"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="11dp"
+            android:layout_below="@id/editChonNgaysinh"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Chọn ngày sinh"
+            android:src="@drawable/ic_calendar" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/editNgaysinh"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:hint="Nhập mật khẩu"
+        android:padding="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"/>
+    <EditText
+        android:id="@+id/editTextPassword2"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"
+        android:hint="Nhập lại mật khẩu"
+        android:padding="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/editTextPassword2"
+    android:id="@+id/dnhapp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Bạn đã có tài khoản     "
+        android:layout_marginLeft="14dp"
+        android:gravity="center"
+        android:fontFamily="@font/archivonarrow"
+        android:textSize="20dp">
+
+    </TextView>
+    <Button
+        android:id="@+id/buttonDangNhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="Đăng nhập"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:backgroundTint="#444444"/>
+</LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonDangKy"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/dnhapp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="18dp"
+        android:backgroundTint="#444444"
+        android:text="Đăng ký" />
+
+</RelativeLayout>

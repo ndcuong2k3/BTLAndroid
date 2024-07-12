@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#ffffff"/> <!-- Màu nền của EditText -->
+    <corners android:radius="10dp"/>   <!-- Bán kính bo góc -->
+    <stroke
+        android:color="#2ecc71"
+        android:width="4dp"/>
+</shape>

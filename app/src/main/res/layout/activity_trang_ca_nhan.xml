@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangCaNhan"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#444444">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Hình đại diện"
+                android:src="@drawable/default_profile_image" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/profileImage"
+                android:layout_marginTop="60dp">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="..."
+                    android:textSize="24sp"
+                    android:layout_below="@id/profileImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/membershipLabel"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_bg"
+                    android:text="Thành viên"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Button "Chỉnh sửa thông tin cá nhân" -->
+        <LinearLayout
+            android:id="@+id/TTCN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_chinhsuattcn"
+                android:layout_marginStart="10dp"
+                android:contentDescription="Edit icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chỉnh sửa thông tin cá nhân"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textAllCaps="false"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Button "Đơn hàng đã mua" -->
+        <LinearLayout
+            android:id="@+id/btDonHangDaMua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_donhangdamua"
+                android:layout_marginStart="10dp"
+                android:contentDescription="Orders icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đơn hàng đã mua"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textAllCaps="false"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <!-- Button "Đăng xuất" -->
+        <LinearLayout
+            android:id="@+id/DangXuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:backgroundTint="@color/white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_dangxuat"
+                android:layout_marginStart="15dp"
+                android:contentDescription="Logout icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng xuất"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/archivonarrow"
+                android:textAllCaps="false"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_home"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 1"
+            android:layout_margin="8dp"/>
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 2"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home2"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 3"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home4"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 4"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home5"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 5"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+    </LinearLayout>
+</RelativeLayout>

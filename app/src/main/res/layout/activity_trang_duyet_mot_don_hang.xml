@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangDuyetMotDonHang"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#444444">
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="90dp"
+                android:id="@+id/rlt1">
+                <TextView
+                    android:id="@+id/membershipLabel"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/edittext_bg"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Admin"
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/membershipLabel"
+                    android:textColor="#FFFDE7"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_toEndOf="@id/rlt1"
+                android:contentDescription="Hình đại diện"
+                android:src="@drawable/default_profile_image" />
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="75dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin khách hàng"
+                    android:paddingStart="0dp"
+                    android:textSize="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/svn_aleo"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:id="@+id/ThongTinKH"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp">
+                </TextView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/SuaTen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Họ tên: "
+                        android:textSize="17sp"
+                        android:backgroundTint="@color/white"
+                        android:paddingStart="90dp"
+
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"/>
+                    <EditText
+                        android:id="@+id/textViewSuaTen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="17sp"
+                        android:backgroundTint="@color/white"
+                        android:padding="0dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/SuaTen"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/SDT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/svn_aleo"
+                        android:paddingStart="90dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:text="Số điện thoại: "
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <EditText
+                        android:id="@+id/textViewSDT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/svn_aleo"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:text="0123456789"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_toEndOf="@id/SDT"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/NgayDatHang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/svn_aleo"
+                        android:paddingStart="90dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:text="Ngày đặt hàng: "
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                    <EditText
+                        android:id="@+id/textViewNgayĐH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/svn_aleo"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:layout_toEndOf="@id/NgayDatHang"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/textViewDiaChi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Địa chỉ giao hàng:"
+                        android:textSize="17sp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:paddingStart="90dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"/>
+                    <EditText
+                        android:id="@+id/textViewDiaChiMĐ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewDiaChi"
+                        android:text="96 Định Công, Hoàng Mai, Hà Nội"
+                        android:textSize="17sp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:paddingStart="90dp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Danh sách sản phẩm"
+                    android:paddingStart="20dp"
+                    android:textSize="20dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/svn_aleo"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:id="@+id/ThongTinCaNhan"
+                    android:textStyle="bold"
+                    android:textColor="@color/black">
+                </TextView>
+
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chi tiết thanh toán"
+                    android:paddingStart="20dp"
+                    android:textSize="17dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/svn_aleo"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:id="@+id/ChiTietThanhToan"
+                    android:textStyle="bold"
+                    android:textColor="@color/black">
+                </TextView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/textViewTongTien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tổng tiền:"
+                        android:textSize="17sp"
+                        android:paddingStart="200dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:background="@color/white" />
+                    <EditText
+                        android:id="@+id/TongTien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:text="1.500.000 đ"
+                        android:textSize="17sp"
+                        android:backgroundTint="@color/white"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/textViewTongTien"
+                        android:layout_marginEnd="5dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/textViewGiamGia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giảm giá:"
+                        android:textSize="17sp"
+                        android:paddingStart="200dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:background="@color/white"/>
+                    <EditText
+                        android:id="@+id/GiamGia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:text="600.000 đ"
+                        android:textSize="17sp"
+                        android:backgroundTint="@color/white"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/textViewGiamGia"
+                        android:layout_marginEnd="5dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/textViewThanhTien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thành tiền:"
+                        android:textSize="17sp"
+                        android:paddingStart="200dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:background="@color/white"/>
+                    <EditText
+                        android:id="@+id/ThanhTien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:text="900.000 đ"
+                        android:textSize="17sp"
+                        android:backgroundTint="@color/white"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="11dp"
+                        android:fontFamily="@font/svn_aleo"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/textViewThanhTien"
+                        android:layout_marginEnd="5dp"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btDuyetDonHang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:backgroundTint="#444444"
+                        android:text="Duyệt" >
+                    </Button>
+                    <Button
+                        android:id="@+id/btXoaDonHang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:backgroundTint="#444444"
+                        android:text="Xóa" >
+                    </Button>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 1"
+            android:src="@drawable/icon_home" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 2"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home1" />
+
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 5"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home5" />
+    </LinearLayout>
+</RelativeLayout>

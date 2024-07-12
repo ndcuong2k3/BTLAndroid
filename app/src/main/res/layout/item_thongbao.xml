@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="30px">
+    <ImageView
+        android:id="@+id/anh"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/demoanhdienthoai" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dateTB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/svn_amsi_cond_regular"
+
+                android:text="20/03"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/title"
+
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+
+                android:text="ĐƠN HÀNG ĐÃ ĐƯỢC DUYỆT"
+                android:textColor="#BA0909"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/svn_amsi_cond_regular"/>
+            <TextView
+                android:id="@+id/textTB"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kiện hàng NPP0254859 của đơn hàng 247587486747 đã được giao thành công đến bạn."
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/svn_banana_chip_muffins"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

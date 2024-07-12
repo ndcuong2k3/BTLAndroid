@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangChu"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#444444">
+
+            <RelativeLayout
+                android:id="@+id/rlt1"
+                android:layout_width="350dp"
+                android:layout_height="90dp">
+
+                <EditText
+                    android:id="@+id/edit_text_search_value"
+                    android:layout_width="140dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/google_button_bg"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/image_button_search"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="118dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/icon_search" />
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/edit_text_search_value"
+                    android:gravity="end"
+                    android:textColor="#FFFDE7"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_toEndOf="@id/rlt1"
+                android:contentDescription="Hình đại diện"
+                android:src="@drawable/default_profile_image" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ViewFlipper
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/home1" />
+
+                <ImageView
+                    android:id="@+id/imgview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/home2" />
+
+                <com.example.btlandroidnc.views.NestedListView
+
+                    android:id="@+id/products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="5dp"
+                    android:verticalScrollbarPosition="right"
+                    android:scrollbarAlwaysDrawHorizontalTrack="false" />
+
+                <Button
+                    android:id="@+id/buttonn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:text="Button4"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 1"
+            android:src="@drawable/icon_home" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 2"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home1" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 3"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home2" />
+
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 4"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home4" />
+
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 5"
+            android:paddingStart="15dp"
+            android:src="@drawable/icon_home5" />
+    </LinearLayout>
+</RelativeLayout>

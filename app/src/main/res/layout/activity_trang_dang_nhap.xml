@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangDangNhap"
+    android:padding="16dp"
+    android:background="#FEFEFC">
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG NHẬP"
+        android:textSize="42sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/anton"
+        android:layout_marginTop="165dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/textViewLogin"
+        android:layout_marginTop="16dp"
+        android:hint="Nhập tài khoản của bạn"
+        android:padding="10dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"
+        android:hint="Nhập mật khẩu"
+        android:padding="10dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/textViewcheckDN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#EF1A0A"
+        android:layout_below="@id/textViewForgotPassword"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="18dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20.4dp"
+        android:text="Quên mật khẩu"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/textViewRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:textColor="#000000"
+        android:backgroundTint="#EBEBEB"
+        android:layout_below="@id/editTextPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/textViewForgotPassword"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="18dp"
+        android:backgroundTint="#EBEBEB"
+        android:text="Đăng nhập"
+        android:textColor="#000000"/>
+
+
+</RelativeLayout>

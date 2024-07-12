@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "647560247404",
+    "firebase_url": "https://psapp-74ec1-default-rtdb.firebaseio.com",
+    "project_id": "psapp-74ec1",
+    "storage_bucket": "psapp-74ec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647560247404:android:5bdc4dbeeeaa398ceac049",
+        "android_client_info": {
+          "package_name": "com.example.btlandroidnc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt5YBwgHirIbIIqFlUYAy61giMwyipLrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

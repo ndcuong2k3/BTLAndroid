@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrangKHXemCTHoaDon"
+    android:background="#FFFDE7">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#444444">
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="90dp"
+                android:id="@+id/rlt1">
+                <TextView
+                    android:id="@+id/membershipLabel"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/edittext_bg"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Thành viên"
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:layout_marginTop="30dp"
+                    android:layout_toEndOf="@id/membershipLabel"
+                    android:textColor="#FFFDE7"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_toEndOf="@id/rlt1"
+                android:contentDescription="Hình đại diện"
+                android:src="@drawable/default_profile_image" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sản phẩm đang được vận chuyển"
+                android:layout_marginTop="10dp"
+                android:paddingStart="20dp"
+                android:textSize="16dp"
+                android:background="@color/white"
+                android:fontFamily="@font/svn_aleo"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:id="@+id/ThongTinGiaoHang"
+                android:textStyle="bold"
+                android:textColor="#ff0000"
+                android:textAlignment="textEnd"
+                android:paddingEnd="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Danh sách sản phẩm"
+                android:paddingStart="20dp"
+                android:textSize="20dp"
+                android:background="@color/white"
+                android:fontFamily="@font/svn_aleo"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:id="@+id/ThongTinCaNhan"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+
+            <ListView
+                android:id="@+id/products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chi tiết thanh toán"
+                android:paddingStart="20dp"
+                android:textSize="17dp"
+                android:background="@color/white"
+                android:fontFamily="@font/svn_aleo"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:id="@+id/ChiTietThanhToan"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textViewTongTien"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng tiền:"
+                    android:textSize="17sp"
+                    android:paddingStart="200dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:background="@color/white" />
+                <TextView
+                    android:id="@+id/TongTien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:text="1.500.000 đ"
+                    android:textSize="17sp"
+                    android:backgroundTint="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/textViewTongTien"
+                    android:layout_marginEnd="5dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textViewGiamGia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giảm giá:"
+                    android:textSize="17sp"
+                    android:paddingStart="200dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+                <TextView
+                    android:id="@+id/GiamGia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:text="600.000 đ"
+                    android:textSize="17sp"
+                    android:backgroundTint="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/textViewGiamGia"
+                    android:layout_marginEnd="5dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textViewThanhTien"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thành tiền:"
+                    android:textSize="17sp"
+                    android:paddingStart="200dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:background="@color/white"/>
+                <TextView
+                    android:id="@+id/ThanhTien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:text="900.000 đ"
+                    android:textSize="17sp"
+                    android:backgroundTint="@color/white"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="11dp"
+                    android:fontFamily="@font/svn_aleo"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/textViewThanhTien"
+                    android:layout_marginEnd="5dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phương thức thanh toán"
+                android:paddingStart="20dp"
+                android:textSize="17dp"
+                android:background="@color/white"
+                android:fontFamily="@font/svn_aleo"
+                android:paddingTop="15dp"
+                android:paddingBottom="11dp"
+                android:id="@+id/PhuongThucThanhToan"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/PTTT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="Tiền mặt"
+                android:textSize="17sp"
+                android:backgroundTint="@color/white"
+                android:paddingTop="15dp"
+                android:paddingBottom="11dp"
+                android:fontFamily="@font/svn_aleo"
+                android:textColor="@color/black"
+                android:layout_toEndOf="@id/PhuongThucThanhToan"
+                android:layout_marginEnd="5dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_home"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 1"
+            android:layout_margin="8dp"/>
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 2"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home2"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 3"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home4"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 4"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home5"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 5"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/khuyenmai">
+        </ImageView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title1"
+                android:layout_marginLeft="15dp"
+                android:layout_width="240dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:text="Voucher giảm 30k cho hóa đơn từ 200k"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/svn_aleo"/>
+            <Button
+                android:id="@+id/btLuu1"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#FF93B9"
+                android:layout_below="@id/title1"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="8dp"
+                android:text="Lưu ngay"
+                android:textSize="28dp"
+                android:textColor="#EF4136"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
