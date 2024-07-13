@@ -45,7 +45,7 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         String myId = sharedPreferences.getString("id", "-1");
         usersRef = FirebaseDatabase.getInstance().getReference("Users").child(myId);
-        profileName = findViewById(R.id.profileName);
+//        profileName = findViewById(R.id.profileName);
         txtHovaTen = findViewById(R.id.edHoVaTen);
         txtEmail = findViewById(R.id.edEmail);
         txtSDT = findViewById(R.id.edSDT);
@@ -63,7 +63,7 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 if (user != null) {
-                    profileName.setText(user.getName());
+//                    profileName.setText(user.getName());
                     txtHovaTen.setText(user.getName());
                     txtEmail.setText(user.getEmail());
                     txtSDT.setText(user.getPhone());
