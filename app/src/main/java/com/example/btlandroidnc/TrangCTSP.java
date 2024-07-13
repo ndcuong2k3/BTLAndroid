@@ -27,7 +27,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class TrangCTSP extends AppCompatActivity {
     private final Reference reference = new Reference();
@@ -38,8 +41,8 @@ public class TrangCTSP extends AppCompatActivity {
 
     private ImageView image_view_product_image, add_action, minus_action;
 
-    TextView text_view_product_name, text_view_price, text_view_price_sale, text_view_product_description, text_view_product_quantity;
-
+    TextView text_view_product_name, text_view_price, text_view_product_description, text_view_product_quantity;
+//    text_view_price_sale
     private Button button_add_to_cart, button_buy_now;
 
     private ImageButton home_button, cart_button;
@@ -102,8 +105,11 @@ public class TrangCTSP extends AppCompatActivity {
                 Product product = data_snapshot.getValue(Product.class);
 
                 text_view_product_name.setText(product.getName());
-                text_view_price.setText(Float.toString(product.getPrice()));
-                text_view_price_sale.setText(Float.toString(product.getPrice() - product.getPrice_sale()));
+                NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+                format.setCurrency(Currency.getInstance("VND"));
+                text_view_price.setText(format.format(product.getPrice()));
+//                text_view_price.setText(Float.toString(product.getPrice()));
+//                text_view_price_sale.setText(Float.toString(product.getPrice() - product.getPrice_sale()));
                 text_view_product_description.setText(product.getDescription());
                 Glide.with(TrangCTSP.this).load(product.getImage()).into(image_view_product_image);
             }
@@ -144,7 +150,7 @@ public class TrangCTSP extends AppCompatActivity {
         image_view_product_image = findViewById(R.id.image_view_product_image);
         text_view_product_name = findViewById(R.id.text_view_product_name);
         text_view_price = findViewById(R.id.text_view_price);
-        text_view_price_sale = findViewById(R.id.text_view_price_sale);
+//        text_view_price_sale = findViewById(R.id.text_view_price_sale);
         text_view_product_description = findViewById(R.id.text_view_product_description);
         button_add_to_cart = findViewById(R.id.button_add_to_cart);
         button_buy_now = findViewById(R.id.button_buy_now);

@@ -3,6 +3,6 @@
     <solid android:color="#ffffff"/> <!-- Màu nền của EditText -->
     <corners android:radius="10dp"/>   <!-- Bán kính bo góc -->
     <stroke
-        android:color="#2ecc71"
+        android:color="@color/white"
         android:width="4dp"/>
 </shape>

@@ -628,7 +628,7 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
     Button btDuyet, btXoa;
     ImageButton btnCaNhan;
     int ix = 0;
-    String user_id; // Biến user_id được khai báo ở đây
+    String user_id;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override

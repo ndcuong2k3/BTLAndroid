@@ -15,7 +15,10 @@ import com.example.btlandroidnc.Model.Product;
 import com.example.btlandroidnc.R;
 import com.example.btlandroidnc.TrangCTSP;
 
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductIndexAdapter extends ArrayAdapter<Product> {
     private List<Product> products;
@@ -62,7 +65,10 @@ public class ProductIndexAdapter extends ArrayAdapter<Product> {
                 .into(image_product_first);
 
         name_product_first.setText(product_first.getName());
-        price_product_first.setText(String.valueOf(product_first.getPrice()));
+        NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+        format.setCurrency(Currency.getInstance("VND"));
+        price_product_first.setText(format.format(product_first.getPrice()));
+//        price_product_first.setText(String.valueOf(product_first.getPrice()));
 
         if(product_sercond != null){
             ImageView image_product_second = row_view.findViewById(R.id.image_product_second);
@@ -86,7 +92,11 @@ public class ProductIndexAdapter extends ArrayAdapter<Product> {
                     load(product_sercond.getImage())
                     .into(image_product_second);
             name_product_second.setText(product_sercond.getName());
-            price_product_second.setText(String.valueOf(product_sercond.getPrice()));
+
+            NumberFormat format2 = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+            format2.setCurrency(Currency.getInstance("VND"));
+            price_product_second.setText(format2.format(product_sercond.getPrice()));
+//            price_product_second.setText(String.valueOf(product_sercond.getPrice()));
         }
 
         return row_view;

@@ -30,8 +30,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.HashMap;
+import java.util.Locale;
 
 
 public class TrangGioHang extends AppCompatActivity {
@@ -234,8 +237,10 @@ public class TrangGioHang extends AppCompatActivity {
                     price += _p.quantity * _p.product.getPrice();
                 }
             }
-
-            text_view_total_price.setText(Integer.toString(price));
+            NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+            format.setCurrency(Currency.getInstance("VND"));
+            text_view_total_price.setText(format.format(price));
+//            text_view_total_price.setText(Integer.toString(price));
         }
     }
 }

@@ -18,8 +18,11 @@ import com.example.btlandroidnc.R;
 import com.example.btlandroidnc.TrangDuyetMotDonHang;
 import com.example.btlandroidnc.TrangKHXemCTHoaDon;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class InvoiceAdapter extends ArrayAdapter<Invoice> {
     private Context mContext;
@@ -85,7 +88,10 @@ public class InvoiceAdapter extends ArrayAdapter<Invoice> {
             Invoice  invoice = getItem(position);
 
             if (invoice != null) {
-                textViewTongTien.setText(String.valueOf( invoice.getTotal()));
+                NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+                format.setCurrency(Currency.getInstance("VND"));
+                textViewTongTien.setText(format.format(invoice.getTotal()));
+//                textViewTongTien.setText(String.valueOf( invoice.getTotal()));
                 textViewNgayDat.setText(String.valueOf(invoice.getCreate_at().getDate())+"/"+
                         String.valueOf(invoice.getCreate_at().getMonth())+"/"+
                         String.valueOf(invoice.getCreate_at().getYear())

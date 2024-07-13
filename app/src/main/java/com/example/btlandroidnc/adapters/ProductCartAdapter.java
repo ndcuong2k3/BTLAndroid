@@ -25,7 +25,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 public class ProductCartAdapter extends ArrayAdapter<ProductCartOrCheckout> {
@@ -80,7 +83,10 @@ public class ProductCartAdapter extends ArrayAdapter<ProductCartOrCheckout> {
 
             text_view_product_name.setText(item.product.getName());
 
-            text_view_product_price.setText(Float.toString(item.product.getPrice()));
+            NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+            format.setCurrency(Currency.getInstance("VND"));
+            text_view_product_price.setText(format.format(item.product.getPrice()));
+//            text_view_product_price.setText(Float.toString(item.product.getPrice()));
 
             text_view_quantity.setText(Integer.toString(item.quantity));
 

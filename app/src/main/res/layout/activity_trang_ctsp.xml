@@ -1,219 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context=".TrangCTSP">
+    android:background="#ffffff">
 
-    <LinearLayout
+    <!-- Header Section -->
+    <RelativeLayout
+        android:id="@+id/headerSection"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="90dp"
+        android:background="#444444"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Left Section -->
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:background="#444444">
+            android:id="@+id/rlt1"
+            android:layout_width="350dp"
+            android:layout_height="90dp">
 
-            <RelativeLayout
-                android:id="@+id/rlt1"
-                android:layout_width="350dp"
-                android:layout_height="90dp">
+            <TextView
+                android:id="@+id/membershipLabel"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Thành viên"
+                android:textColor="#444444"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/membershipLabel"
-                    android:layout_width="107dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="35dp"
-                    android:background="@drawable/edittext_bg"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:text="Thành viên"
-                    android:textColor="#444444"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/profileName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="30dp"
-                    android:layout_toEndOf="@id/membershipLabel"
-                    android:gravity="end"
-                    android:text=""
-                    android:textColor="#FFFDE7"
-                    android:textSize="24sp" />
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_toEndOf="@id/rlt1"
-                android:contentDescription="Hình đại diện"
-                android:src="@drawable/default_profile_image" />
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@id/membershipLabel"
+                android:gravity="end"
+                android:text=""
+                android:textColor="#FFFDE7"
+                android:textSize="24sp" />
         </RelativeLayout>
 
+        <!-- Right Section -->
         <ImageView
-            android:id="@+id/image_view_product_image"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30px"
-            android:src="@drawable/demoanhdienthoai"></ImageView>
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_toEndOf="@id/rlt1"
+            android:contentDescription="Hình đại diện"
+            android:src="@drawable/default_profile_image" />
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/text_view_product_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:text="Điện thoại Samsung"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+    <!-- Scrollable Content Section -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerSection">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <FrameLayout
+            <!-- Product Image -->
+
+            <!-- Product Name -->
+            <ImageView
+                android:id="@+id/image_view_product_image"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/demoanhdienthoai" />
+
+            <TextView
+                android:id="@+id/text_view_product_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:text="Điện thoại Samsung"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/text_view_price"
+            <!-- Price Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_view_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@android:color/transparent"
+                        android:text="30.000 đ"
+                        android:textColor="@android:color/black"
+                        android:textSize="25dp" />
+<!--                    android:layout_marginStart="100dp"-->
+<!--                    <View-->
+<!--                        android:layout_width="110dp"-->
+<!--                        android:layout_height="2dp"-->
+<!--                        android:layout_marginStart="90dp"-->
+<!--                        android:layout_marginTop="17dp"-->
+<!--                        android:background="@android:color/black" />-->
+                </FrameLayout>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/text_view_price_sale"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:text="10.000 đ"-->
+<!--                    android:textColor="#ff0000"-->
+<!--                    android:textSize="25dp"-->
+<!--                    android:textStyle="bold" />-->
+            </LinearLayout>
+
+            <!-- Buttons Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_add_to_cart"
+                    android:layout_width="195dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#444444"
+                    android:text="Thêm vào giỏ hàng" />
+
+                <Button
+                    android:id="@+id/button_buy_now"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:background="@android:color/transparent"
-                    android:text="30.000 đ"
-                    android:textColor="@color/black"
-                    android:textSize="25dp" />
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#444444"
+                    android:text="Mua ngay" />
+            </LinearLayout>
 
-                <View
-                    android:layout_width="110dp"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="90dp"
-                    android:layout_marginTop="17dp"
-                    android:background="@color/black" />
-            </FrameLayout>
+            <!-- Specifications Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:text="Thông số kỹ thuật"
+                android:fontFamily="@font/archivonarrow"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text_view_price_sale"
-                android:layout_width="wrap_content"
+                android:id="@+id/text_view_product_description"
+                android:layout_width="393dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
                 android:background="@android:color/transparent"
-                android:text="10.000 đ"
-                android:textColor="#ff0000"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:fontFamily="@font/archivonarrow"
+                android:text="Ram: 8GB"
+                android:textColor="@android:color/black"
+                android:textSize="25dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_add_to_cart"
-                android:layout_width="195dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:backgroundTint="#444444"
-                android:text="Thêm vào giỏ hàng"></Button>
-
-            <Button
-                android:id="@+id/button_buy_now"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:backgroundTint="#444444"
-                android:text="Mua ngay"></Button>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/text_view_product_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:text="Mô tả: Điện thoại Samsung là một điện thoại rất xịn =)) Nó là mô tả đó"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Số lượng"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
+            <!-- Quantity Section -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/ln2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                android:layout_marginLeft="210dp">
-
-                <ImageView
-                    android:id="@+id/add_action"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginTop="9dp"
-                    android:src="@drawable/add" />
-
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/product_quantity"
-                    android:layout_width="13dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="4dp"
-                    android:inputType="numberDecimal"
-                    android:text="1"
-                    android:textColor="@color/black"
-                    android:textSize="26dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số lượng"
+                    android:textSize="25dp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/minus_action"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="9dp"
-                    android:src="@drawable/minus" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginLeft="210dp">
+
+                    <ImageView
+                        android:id="@+id/add_action"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="9dp"
+                        android:src="@drawable/add" />
+
+
+                    <TextView
+                        android:id="@+id/product_quantity"
+                        android:layout_width="13dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="4dp"
+                        android:inputType="numberDecimal"
+                        android:text="1"
+                        android:textColor="@android:color/black"
+                        android:textSize="26dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/minus_action"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="9dp"
+                        android:src="@drawable/minus" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
-
+    <!-- Bottom Navigation Section -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/bottomNavigationSection"
+        android:layout_width="0dp"
         android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
         android:background="#444444"
         android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:orientation="horizontal">
 
         <ImageButton
@@ -265,4 +302,4 @@
             android:paddingStart="15dp"
             android:src="@drawable/icon_home5" />
     </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
