@@ -66,6 +66,8 @@ public class TrangMuaHang extends AppCompatActivity {
 
     ImageButton image_button_home, image_button_cart;
 
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
+
     HashMap<String, Product> products = new HashMap<>();
 
     boolean is_from_cart;
@@ -140,21 +142,49 @@ public class TrangMuaHang extends AppCompatActivity {
             }
         });
 
-        image_button_home.setOnClickListener(new View.OnClickListener() {
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrangMuaHang.this, TrangChu.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                Intent i = new Intent(TrangMuaHang.this, TrangCaNhan.class);
+                startActivity(i);
             }
         });
 
-        image_button_cart.setOnClickListener(new View.OnClickListener() {
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangMuaHang.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangMuaHang.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TrangMuaHang.this, TrangGioHang.class);
                 startActivity(intent);
             }
         });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangMuaHang.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         adapter_voucher = new VoucherCheckoutAdapter(TrangMuaHang.this, vouchers, new HandleCheck());
 
@@ -190,9 +220,14 @@ public class TrangMuaHang extends AppCompatActivity {
         this.text_view_total_price = findViewById(R.id.ThanhTien);
         this.edit_text_address = findViewById(R.id.address);
         this.button_order = findViewById(R.id.order);
-        this.image_button_home = findViewById(R.id.button1);
-        this.image_button_cart = findViewById(R.id.button4);
+
         this.list_view_vouchers = findViewById(R.id.vouchers);
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+
     }
 
     private void handle_checkout() {

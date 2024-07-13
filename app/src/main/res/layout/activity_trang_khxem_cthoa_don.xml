@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrangKHXemCTHoaDon"
-    android:background="#FFFDE7">
+    android:background="@color/white">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,23 +56,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
+<!--            <TextView-->
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sản phẩm đang được vận chuyển"
-                android:layout_marginTop="10dp"
-                android:paddingStart="20dp"
-                android:textSize="16dp"
-                android:background="@color/white"
-                android:fontFamily="@font/svn_aleo"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:id="@+id/ThongTinGiaoHang"
-                android:textStyle="bold"
-                android:textColor="#ff0000"
-                android:textAlignment="textEnd"
-                android:paddingEnd="20dp" />
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Sản phẩm đang được vận chuyển"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:paddingStart="20dp"-->
+<!--                android:textSize="16dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:fontFamily="@font/svn_aleo"-->
+<!--                android:paddingTop="7dp"-->
+<!--                android:paddingBottom="7dp"-->
+<!--                android:id="@+id/ThongTinGiaoHang"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#ff0000"-->
+<!--                android:textAlignment="textEnd"-->
+<!--                android:paddingEnd="20dp" />-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 android:paddingStart="20dp"
                 android:textSize="20dp"
                 android:background="@color/white"
-                android:fontFamily="@font/svn_aleo"
+                android:fontFamily="@font/archivonarrow"
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
                 android:id="@+id/ThongTinCaNhan"
@@ -101,7 +101,7 @@
                 android:paddingStart="20dp"
                 android:textSize="17dp"
                 android:background="@color/white"
-                android:fontFamily="@font/svn_aleo"
+                android:fontFamily="@font/archivonarrow"
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
                 android:id="@+id/ChiTietThanhToan"
@@ -121,7 +121,7 @@
                     android:paddingStart="200dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:background="@color/white" />
                 <TextView
@@ -134,7 +134,7 @@
                     android:backgroundTint="@color/white"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:layout_toEndOf="@id/textViewTongTien"
                     android:layout_marginEnd="5dp"/>
@@ -152,7 +152,7 @@
                     android:paddingStart="200dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:background="@color/white"/>
                 <TextView
@@ -165,7 +165,7 @@
                     android:backgroundTint="@color/white"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:layout_toEndOf="@id/textViewGiamGia"
                     android:layout_marginEnd="5dp"/>
@@ -183,7 +183,7 @@
                     android:paddingStart="200dp"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:background="@color/white"/>
                 <TextView
@@ -196,7 +196,7 @@
                     android:backgroundTint="@color/white"
                     android:paddingTop="15dp"
                     android:paddingBottom="11dp"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/archivonarrow"
                     android:textColor="@color/black"
                     android:layout_toEndOf="@id/textViewThanhTien"
                     android:layout_marginEnd="5dp"/>
@@ -214,7 +214,7 @@
                 android:paddingStart="20dp"
                 android:textSize="17dp"
                 android:background="@color/white"
-                android:fontFamily="@font/svn_aleo"
+                android:fontFamily="@font/archivonarrow"
                 android:paddingTop="15dp"
                 android:paddingBottom="11dp"
                 android:id="@+id/PhuongThucThanhToan"
@@ -230,7 +230,7 @@
                 android:backgroundTint="@color/white"
                 android:paddingTop="15dp"
                 android:paddingBottom="11dp"
-                android:fontFamily="@font/svn_aleo"
+                android:fontFamily="@font/archivonarrow"
                 android:textColor="@color/black"
                 android:layout_toEndOf="@id/PhuongThucThanhToan"
                 android:layout_marginEnd="5dp"/>

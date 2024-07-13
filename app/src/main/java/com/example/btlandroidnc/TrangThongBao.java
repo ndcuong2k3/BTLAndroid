@@ -136,6 +136,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -164,11 +166,59 @@ public class TrangThongBao extends AppCompatActivity {
     User_NotificationAdapter adapter;
     SharedPreferences sharedPreferences;
     ListView listViewNotifications;
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_thong_bao);
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangThongBao.this, TrangCaNhan.class);
+                startActivity(i);
+            }
+        });
+
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangThongBao.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangThongBao.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangThongBao.this, TrangGioHang.class);
+                startActivity(intent);
+            }
+        });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangThongBao.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
 

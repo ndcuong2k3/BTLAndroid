@@ -2,8 +2,11 @@ package com.example.btlandroidnc;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -31,6 +34,7 @@ public class TrangXemDHDaMua extends AppCompatActivity {
     ListView listView;
     InvoiceAdapter invoiceAdapter;
     SharedPreferences sharedPreferences;
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,6 +47,55 @@ public class TrangXemDHDaMua extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangXemDHDaMua.this, TrangCaNhan.class);
+                startActivity(i);
+            }
+        });
+
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangXemDHDaMua.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangXemDHDaMua.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangXemDHDaMua.this, TrangGioHang.class);
+                startActivity(intent);
+            }
+        });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangXemDHDaMua.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
+
 //        getSupportActionBar().hide();
         sharedPreferences= getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         String myId = sharedPreferences.getString("id", "-1");

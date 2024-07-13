@@ -43,6 +43,7 @@ public class TrangGioHang extends AppCompatActivity {
     private ListView list_view_cart;
 
     ImageButton button1;
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
 
     ProductCartAdapter adapter;
 
@@ -65,6 +66,50 @@ public class TrangGioHang extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        mapping_client();
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangGioHang.this, TrangCaNhan.class);
+                startActivity(i);
+            }
+        });
+
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangGioHang.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangGioHang.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangGioHang.this, TrangGioHang.class);
+                startActivity(intent);
+            }
+        });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangGioHang.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
         DatabaseReference users_ref = reference.getUsers();
@@ -77,15 +122,8 @@ public class TrangGioHang extends AppCompatActivity {
 
         list_view_cart = findViewById(R.id.list_view_cart);
 
-        mapping_client();
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrangGioHang.this, TrangChu.class);
-                startActivity(intent);
-            }
-        });
+
 
         users_ref.child(user_id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -190,7 +228,12 @@ public class TrangGioHang extends AppCompatActivity {
     }
 
     void mapping_client() {
-        this.button1 = findViewById(R.id.button1);
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+
         total_check = findViewById(R.id.total_check);
         text_view_selected_count = findViewById(R.id.selected_count);
         text_view_total_price = findViewById(R.id.total);

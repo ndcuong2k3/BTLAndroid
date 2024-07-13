@@ -45,6 +45,7 @@ public class TrangCTSP extends AppCompatActivity {
 //    text_view_price_sale
     private Button button_add_to_cart, button_buy_now;
 
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
     private ImageButton home_button, cart_button;
 
     private String product_id;
@@ -59,21 +60,64 @@ public class TrangCTSP extends AppCompatActivity {
 
         mapping_client();
 
-        home_button.setOnClickListener(new View.OnClickListener() {
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrangCTSP.this, TrangChu.class);
-                startActivity(intent);
+            public void onClick(View view) {
+                Intent i = new Intent(TrangCTSP.this, TrangCaNhan.class);
+                startActivity(i);
             }
         });
 
-        cart_button.setOnClickListener(new View.OnClickListener() {
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangCTSP.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangCTSP.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TrangCTSP.this, TrangGioHang.class);
                 startActivity(intent);
             }
         });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangCTSP.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
+
+//        home_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TrangCTSP.this, TrangChu.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        cart_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TrangCTSP.this, TrangGioHang.class);
+//                startActivity(intent);
+//            }
+//        });
 
         this.product_id = getIntent().getStringExtra("product_id");
 
@@ -154,8 +198,15 @@ public class TrangCTSP extends AppCompatActivity {
         text_view_product_description = findViewById(R.id.text_view_product_description);
         button_add_to_cart = findViewById(R.id.button_add_to_cart);
         button_buy_now = findViewById(R.id.button_buy_now);
-        home_button = findViewById(R.id.button1);
-        cart_button = findViewById(R.id.button4);
+//        home_button = findViewById(R.id.button1);
+//        cart_button = findViewById(R.id.button4);
+
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+
         add_action = findViewById(R.id.add_action);
         minus_action = findViewById(R.id.minus_action);
         text_view_product_quantity = findViewById(R.id.product_quantity);

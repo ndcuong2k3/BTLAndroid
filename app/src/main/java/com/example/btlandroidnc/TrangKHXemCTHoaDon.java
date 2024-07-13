@@ -3,6 +3,8 @@ package com.example.btlandroidnc;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +31,7 @@ public class TrangKHXemCTHoaDon extends AppCompatActivity {
     DatabaseReference usersRef;
     ListView listView;
     TextView txtTTGiaoHang,txtTongTien,txtGiamGia,txtThanhTien;
+    ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
     List<ProductCartOrCheckout> orderList;
     ProductCheckoutAdapter orderAdapter;
     @SuppressLint("MissingInflatedId")
@@ -42,9 +45,59 @@ public class TrangKHXemCTHoaDon extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        bt_ThongBao = findViewById(R.id.button3);
+        bt_TTCaNhan = findViewById(R.id.button5);
+        bt_KhuyenMai = findViewById(R.id.button2);
+        bt_GioHang = findViewById(R.id.button4);
+        btTrangChu = findViewById(R.id.button1);
+
+        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangKHXemCTHoaDon.this, TrangCaNhan.class);
+                startActivity(i);
+            }
+        });
+
+        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangKHXemCTHoaDon.this,TrangThongBao.class);
+                startActivity(i);
+            }
+        });
+
+
+        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TrangKHXemCTHoaDon.this, TrangKhuyenMai.class);
+                startActivity(i);
+            }
+        });
+
+// Xử lý khi người dùng click vào nút Giỏ hàng
+        bt_GioHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TrangKHXemCTHoaDon.this, TrangGioHang.class);
+                startActivity(intent);
+            }
+        });
+
+        btTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangKHXemCTHoaDon.this, TrangChu.class);
+                startActivity(intent);
+            }
+        });
+
+
         Intent i =getIntent();
         String id = i.getStringExtra("id");
-        txtTTGiaoHang=findViewById(R.id.ThongTinGiaoHang);
+//        txtTTGiaoHang=findViewById(R.id.ThongTinGiaoHang);
         listView = findViewById(R.id.products);
         txtThanhTien =findViewById(R.id.ThanhTien);
         txtTongTien = findViewById(R.id.TongTien);
@@ -57,7 +110,7 @@ public class TrangKHXemCTHoaDon extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(!snapshot.child("is_validate").getValue(Boolean.class))
-                    txtTTGiaoHang.setText("Đơn hàng đang được phê duyệt");
+//                    txtTTGiaoHang.setText("Đơn hàng đang được phê duyệt");
                 txtTongTien.setText(String.valueOf(snapshot.child("total").getValue(Long.class)+snapshot.child("discount").getValue(Long.class))+"đ");
                 txtThanhTien.setText(String.valueOf(snapshot.child("total").getValue(Long.class))+"đ");
                 txtGiamGia.setText(String.valueOf(snapshot.child("discount").getValue(Long.class))+"đ");
