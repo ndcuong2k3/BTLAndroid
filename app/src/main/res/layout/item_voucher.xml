@@ -3,46 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+
+
     <LinearLayout
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginTop="10dp"
+        android:padding="16dp"
         tools:ignore="MissingConstraints">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/khuyenmai">
-        </ImageView>
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/khuyenmai"
+            android:layout_gravity="center_vertical"
+            />
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp">
+
             <TextView
                 android:id="@+id/title1"
-                android:layout_marginLeft="15dp"
-                android:layout_width="240dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Voucher giảm 30k cho hóa đơn từ 200k"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="@font/svn_aleo"/>
+                android:fontFamily="@font/svn_aleo"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"/>
+
             <Button
                 android:id="@+id/btLuu1"
-                android:layout_width="100dp"
-                android:layout_height="48dp"
-                android:backgroundTint="#FF93B9"
-                android:layout_below="@id/title1"
-                android:layout_marginStart="150dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Lưu ngay"
-                android:textSize="28dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="#EF4136"
-                android:textStyle="bold"/>
+                android:backgroundTint="#EBEBEB"
+                android:layout_below="@id/title1"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"/>
         </RelativeLayout>
     </LinearLayout>
+</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

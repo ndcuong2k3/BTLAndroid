@@ -32,7 +32,7 @@ public class TrangChu extends AppCompatActivity {
     private EditText edit_text_search_value;
     SharedPreferences sharedPreferences;
     TextView textView;
-    private final Reference reference = new Reference();
+    //private final Reference reference = new Reference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,8 @@ public class TrangChu extends AppCompatActivity {
         ListView list_view_products = findViewById(R.id.products);
         sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         String myId = sharedPreferences.getString("id", "-1");
-        DatabaseReference products_ref = reference.getProducts();
+//        DatabaseReference products_ref = reference.getProducts();
+        DatabaseReference products_ref = FirebaseDatabase.getInstance().getReference("Products");
         DatabaseReference users_ref = FirebaseDatabase.getInstance().getReference("Users").child(myId);
 
         // Xử lý khi người dùng click vào ô tìm kiếm
@@ -104,6 +105,7 @@ public class TrangChu extends AppCompatActivity {
                 }
                 ProductIndexAdapter productIndexAdapter = new ProductIndexAdapter(TrangChu.this, products);
                 list_view_products.setAdapter(productIndexAdapter);
+
 
                 // Xử lý khi người dùng click vào một sản phẩm trong danh sách
                 list_view_products.setOnItemClickListener(new AdapterView.OnItemClickListener() {

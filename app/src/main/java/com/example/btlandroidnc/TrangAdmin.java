@@ -10,13 +10,21 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TrangAdmin extends AppCompatActivity {
-    Button btUpdateSP, btXemTTKhachHang, btDuyetDonHang;
+    Button btUpdateSP, btXemTTKhachHang, btDuyetDonHang, btThemvoucher;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_admin);
-
+        btThemvoucher = findViewById(R.id.btThemVoucher);
+        btThemvoucher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangAdmin.this,TrangThemVoucher.class);
+                startActivity(intent);
+            }
+        });
         btXemTTKhachHang = findViewById(R.id.btXemTTKhachHang);
         btDuyetDonHang =findViewById(R.id.btDuyetDonHang);
         btDuyetDonHang.setOnClickListener(new View.OnClickListener() {

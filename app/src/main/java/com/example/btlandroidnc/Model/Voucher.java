@@ -55,8 +55,10 @@ public class Voucher {
     public void setCondition(float condition) {
         this.condition = condition;
     }
-
     public Voucher() {
+
+    }
+    public Voucher(String title, String description, String image, float value, float condition) {
     }
 
     public Voucher(String id, String title, String description, String image, float value, float condition) {

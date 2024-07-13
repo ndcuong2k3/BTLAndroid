@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 public class TrangDangKy extends AppCompatActivity {
     DatePickerDialog datePickerDialog;
@@ -104,47 +105,7 @@ public class TrangDangKy extends AppCompatActivity {
             }
         });
 
-//        btDangKy.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String username = edUser.getText().toString().trim();
-//                int frontId = username.indexOf('@');
-//                String idUser = username.replace(".", "");
-//                String hoTen = edHoTen.getText().toString().trim();
-//                String ngaySinh = edNgaySinh.getText().toString().trim();
-//                String matKhau = edMatKhau.getText().toString().trim();
-//                String SDT = edSDT.getText().toString().trim();
-//                String matKhau2 = edMatKhau2.getText().toString().trim();
-//                Date convertedDate;
-//                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-//
-//                try {
-//                    // Chuyển đổi chuỗi thành đối tượng Date
-//                    convertedDate = dateFormat.parse(ngaySinh);
-//                } catch (ParseException e) {
-//                    e.printStackTrace();
-//                    // Xử lý khi có lỗi trong quá trình chuyển đổi
-//                }
-//
-//                Date date_create_user = new Date();
-//                ArrayList<User_Notification> user_notifications = new ArrayList<>();
-//                User_Notification u_ntf = new User_Notification("1", "Bạn mới", "Chào Mừng bạn đến với ứng dụng của chúng tôi", date_create_user);
-//                user_notifications.add(u_ntf);
-//                User_Notification u_ntf2 = new User_Notification("2", "Giảm 100k", "Chúc Mừng bạn nhận được voucher giảm 100K cho đơn từ 0đ", date_create_user);
-//                user_notifications.add(u_ntf2);
-//                Date date = new Date(Integer.parseInt(ngaySinh.substring(6, 10)), Integer.parseInt(ngaySinh.substring(3, 5)), Integer.parseInt(ngaySinh.substring(0, 2)));
-//                Log.d("DateDK", String.valueOf(date));
-//                ArrayList<Voucher> arrayList = new ArrayList<>();
-//                Voucher voucher = new Voucher("1", "New User", "Chao mung ban moi", "image", 100f, 0f);
-//                arrayList.add(voucher);
-//                User user = new User(idUser, hoTen, username, matKhau, date, SDT, arrayList, user_notifications);
-//
-//                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-//                databaseReference.child(idUser).setValue(user);
-//
-//                Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
         btDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,13 +120,23 @@ public class TrangDangKy extends AppCompatActivity {
 
                 if (username.isEmpty() || hoTen.isEmpty() || ngaySinh.isEmpty() || matKhau.isEmpty() || SDT.isEmpty() || matKhau2.isEmpty()) {
                     showToast("Vui lòng nhập đầy đủ thông tin");
-                    return; // Dừng xử lý nếu có trường nào rỗng
+                    return;
                 }
 
-                // Kiểm tra mật khẩu và xác nhận mật khẩu có khớp không
+                if (!isValidEmail(username)) {
+                    showToast("Email không hợp lệ");
+                    return;
+                }
+
+                if (!isValidPhoneNumber(SDT)) {
+                    showToast("Số điện thoại không hợp lệ");
+                    return;
+                }
+
+
                 if (!matKhau.equals(matKhau2)) {
                     showToast("Mật khẩu không khớp");
-                    return; // Dừng xử lý nếu mật khẩu không khớp
+                    return;
                 }
 
                 Date convertedDate = null;
@@ -205,16 +176,33 @@ public class TrangDangKy extends AppCompatActivity {
                 databaseReference.child(idUser).setValue(user);
 
                 Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(TrangDangKy.this, TrangDangNhap.class);
+                startActivity(intent);
             }
         });
 
     }
-    // Phương thức để hiển thị Toast tại vị trí cụ thể
+
 
     private void showToast(String message) {
-        Toast toast = Toast.makeText(TrangDangKy.this, message, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100); // Đặt vị trí toast ở đầu màn hình
-        toast.show();
+//        Toast toast = Toast.makeText(TrangDangKy.this, message, Toast.LENGTH_SHORT);
+//        toast.setGravity(Gravity.CENTER, 0, 0); // Tăng offset y
+//
+//        toast.show();
     }
+
+    private boolean isValidPhoneNumber(String phoneNumber) {
+
+        return phoneNumber.matches("^0[0-9]{9,10}$");
+    }
+
+
+
+    public boolean isValidEmail(String email) {
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        return Pattern.compile(emailPattern).matcher(email).matches();
+    }
+
+
 
 }

@@ -103,6 +103,21 @@
         android:gravity="bottom" />
 
     <Button
+        android:id="@+id/btThemVoucher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/archivonarrow"
+        android:gravity="bottom"
+        android:paddingStart="20dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:text="Thêm voucher"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/logout"
+        android:textSize="25dp"/>
+    <Button
         android:id="@+id/btDangXuatAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

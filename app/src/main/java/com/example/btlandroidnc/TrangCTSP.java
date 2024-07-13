@@ -103,21 +103,6 @@ public class TrangCTSP extends AppCompatActivity {
         });
 
 
-//        home_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(TrangCTSP.this, TrangChu.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        cart_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(TrangCTSP.this, TrangGioHang.class);
-//                startActivity(intent);
-//            }
-//        });
 
         this.product_id = getIntent().getStringExtra("product_id");
 
@@ -238,9 +223,9 @@ public class TrangCTSP extends AppCompatActivity {
 
             }
         });
-        Toast toast = Toast.makeText(this, user_id, Toast.LENGTH_LONG);
+        //Toast toast = Toast.makeText(this, user_id, Toast.LENGTH_LONG);
 
-        toast.show();
+        //toast.show();
 
     }
 

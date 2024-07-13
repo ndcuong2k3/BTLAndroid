@@ -103,7 +103,6 @@ public class TrangKhuyenMai extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
                     String title = snapshot.child("title").getValue(String.class);
-
                     String description = snapshot.child("description").getValue(String.class);
                     String id = snapshot.child("id").getValue(String.class);
                     String image = snapshot.child("image").getValue(String.class);

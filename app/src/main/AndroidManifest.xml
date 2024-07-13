@@ -14,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BTLAndroidNC"
         tools:targetApi="31">
-        <activity android:name=".TrangDangKy"
-            android:exported="true">
-
-        </activity>
-
-        <activity android:name=".TrangDangNhap"
+        <activity
+            android:name=".TrangThemVoucher"
+            android:exported="false" />
+        <activity
+            android:name=".TrangDangKy"
+            android:exported="true"></activity>
+        <activity
+            android:name=".TrangDangNhap"
             android:exported="true"
             android:theme="@style/Theme.BTLAndroidNC">
             <intent-filter>
@@ -28,76 +30,59 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TrangCaNhan"
+        <activity
+            android:name=".TrangCaNhan"
             android:exported="true"
-            android:theme="@style/Theme.BTLAndroidNC">
-
-        </activity>
-        <activity android:name=".ChinhSuaThongTinCaNhan"
-            android:theme="@style/Theme.BTLAndroidNC"/>
-
+            android:theme="@style/Theme.BTLAndroidNC"></activity>
+        <activity
+            android:name=".ChinhSuaThongTinCaNhan"
+            android:theme="@style/Theme.BTLAndroidNC" />
         <activity
             android:name=".TrangChu"
             android:label="@string/app_name"
-            android:theme="@style/Theme.BTLAndroidNC"/>
-
+            android:theme="@style/Theme.BTLAndroidNC" />
         <activity
             android:name=".TrangThongBao"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangKhuyenMai"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangAdmin"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangUpdateSP"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangThemSPMoi"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangGioHang"
             android:theme="@style/Theme.BTLAndroidNC" />
-
-
-
         <activity
             android:name=".TrangCTSP"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangMuaHang"
-            android:theme="@style/Theme.BTLAndroidNC" >
-        </activity>
-
+            android:theme="@style/Theme.BTLAndroidNC"></activity>
         <activity
             android:name=".TrangDuyetDonHang"
             android:theme="@style/Theme.BTLAndroidNC" />
-        <activity android:name=".TrangKHXemCTHoaDon" android:theme="@style/Theme.BTLAndroidNC"/>
-
+        <activity
+            android:name=".TrangKHXemCTHoaDon"
+            android:theme="@style/Theme.BTLAndroidNC" />
         <activity
             android:name=".TrangDuyetMotDonHang"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangXemDHDaMua"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangXemThongTinKH"
             android:theme="@style/Theme.BTLAndroidNC" />
-
         <activity
             android:name=".TrangXemThongTinMotKH"
             android:theme="@style/Theme.BTLAndroidNC" />
-
-
     </application>
 
 </manifest>

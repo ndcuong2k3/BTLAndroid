@@ -21,7 +21,7 @@
 
     <EditText
         android:id="@+id/editTextUsername"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@id/textDangKy"
         android:layout_marginTop="16dp"
@@ -32,7 +32,7 @@
         android:layout_marginBottom="8dp" />
     <EditText
         android:id="@+id/editHoTen"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@id/editTextUsername"
         android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
         android:layout_marginBottom="8dp" />
     <EditText
         android:id="@+id/editSDT"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@id/editHoTen"
         android:layout_marginTop="8dp"
@@ -65,7 +65,7 @@
 
         <EditText
             android:id="@+id/editChonNgaysinh"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
@@ -87,7 +87,7 @@
     </LinearLayout>
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@id/editNgaysinh"
         android:layout_marginTop="5dp"
@@ -99,7 +99,7 @@
         android:layout_marginBottom="8dp"/>
     <EditText
         android:id="@+id/editTextPassword2"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@id/editTextPassword"
         android:layout_marginTop="8dp"
