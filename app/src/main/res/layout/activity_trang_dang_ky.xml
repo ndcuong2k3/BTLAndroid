@@ -76,13 +76,14 @@
 
         <ImageButton
             android:id="@+id/buttonDatePicker"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginTop="11dp"
             android:layout_below="@id/editChonNgaysinh"
             android:layout_alignParentEnd="true"
             android:contentDescription="Chọn ngày sinh"
-            android:src="@drawable/ic_calendar" />
+            android:src="@drawable/calender_2"
+            android:scaleType="centerCrop"/>
     </LinearLayout>
     <EditText
         android:id="@+id/editTextPassword"
@@ -107,47 +108,49 @@
         android:padding="10dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/editTextPassword2"
-    android:id="@+id/dnhapp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Bạn đã có tài khoản     "
-        android:layout_marginLeft="14dp"
-        android:gravity="center"
-        android:fontFamily="@font/archivonarrow"
-        android:textSize="20dp">
-
-    </TextView>
-    <Button
-        android:id="@+id/buttonDangNhap"
-        android:layout_width="wrap_content"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="22dp"
-        android:gravity="center"
-        android:text="Đăng nhập"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:backgroundTint="#444444"/>
-</LinearLayout>
+        android:layout_below="@+id/editTextPassword2"
+        android:id="@+id/dnhapp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Bạn đã có tài khoản     "
+            android:layout_marginLeft="14dp"
+            android:gravity="center"
+            android:fontFamily="@font/archivonarrow"
+            android:textSize="20dp">
+
+        </TextView>
+        <Button
+            android:id="@+id/buttonDangNhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPassword2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Đăng nhập"
+            android:textColor="@color/blue"
+            android:textSize="20dp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 
 
     <Button
         android:id="@+id/buttonDangKy"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:layout_below="@id/dnhapp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
         android:layout_marginEnd="18dp"
-        android:backgroundTint="#444444"
+        android:backgroundTint="#EBEBEB"
+        android:textColor="@color/black"
         android:text="Đăng ký" />
 
 </RelativeLayout>

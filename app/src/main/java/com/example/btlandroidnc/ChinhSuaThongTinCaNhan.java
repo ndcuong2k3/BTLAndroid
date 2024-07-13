@@ -49,7 +49,7 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
         txtSDT = findViewById(R.id.edSDT);
         btnLuu = findViewById(R.id.buttonSave);
         btnHuy = findViewById(R.id.buttonCancel);
-        bt_ThongBao = findViewById(R.id.button3);
+        bt_ThongBao = findViewById(R.id.buttontb);
         bt_TTCaNhan = findViewById(R.id.button5);
         bt_KhuyenMai = findViewById(R.id.button2);
         bt_GioHang = findViewById(R.id.button4);
@@ -110,48 +110,42 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
             }
         });
 
-        bt_ThongBao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ChinhSuaThongTinCaNhan.this, TrangThongBao.class);
-                startActivity(i);
-            }
-        });
+
 
         // Xử lý khi người dùng click vào nút Thông tin cá nhân
-        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ChinhSuaThongTinCaNhan.this, TrangCaNhan.class);
-                startActivity(i);
-            }
-        });
+//        bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(ChinhSuaThongTinCaNhan.this, TrangCaNhan.class);
+//                startActivity(i);
+//            }
+//        });
 
         // Xử lý khi người dùng click vào nút Khuyến mãi
-        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ChinhSuaThongTinCaNhan.this, TrangKhuyenMai.class);
-                startActivity(i);
-            }
-        });
-
-        // Xử lý khi người dùng click vào nút Giỏ hàng
-        bt_GioHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChinhSuaThongTinCaNhan.this, TrangGioHang.class);
-                startActivity(intent);
-            }
-        });
-
-        btTrangChu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ChinhSuaThongTinCaNhan.this, TrangChu.class);
-                startActivity(intent);
-            }
-        });
+//        bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(ChinhSuaThongTinCaNhan.this, TrangKhuyenMai.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        // Xử lý khi người dùng click vào nút Giỏ hàng
+//        bt_GioHang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ChinhSuaThongTinCaNhan.this, TrangGioHang.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        btTrangChu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(ChinhSuaThongTinCaNhan.this, TrangChu.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }

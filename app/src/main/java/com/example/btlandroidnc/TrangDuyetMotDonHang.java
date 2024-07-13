@@ -587,6 +587,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -625,10 +626,11 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
     TextView txtTongTien, txtGiamGia, txtThanhTien;
     ProductCheckoutAdapter orderAdapter;
     Button btDuyet, btXoa;
+    ImageButton btnCaNhan;
     int ix = 0;
     String user_id; // Biến user_id được khai báo ở đây
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -641,6 +643,7 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
         });
         sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         txtThanhTien = findViewById(R.id.ThanhTien);
+        btnCaNhan = findViewById(R.id.button5);
         txtTongTien = findViewById(R.id.TongTien);
         txtGiamGia = findViewById(R.id.GiamGia);
         btDuyet = findViewById(R.id.btDuyetDonHang);
@@ -719,6 +722,14 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("TrangDuyetMotDonHang", "Lỗi khi đọc dữ liệu hóa đơn: " + error.getMessage());
+            }
+        });
+
+        btnCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangDuyetMotDonHang.this,TrangAdmin.class);
+                startActivity(intent);
             }
         });
 

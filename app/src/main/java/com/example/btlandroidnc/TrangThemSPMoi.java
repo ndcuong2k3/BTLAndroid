@@ -1,6 +1,7 @@
 package com.example.btlandroidnc;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +32,7 @@ public class TrangThemSPMoi extends AppCompatActivity {
     private final Reference reference = new Reference();
     private final DatabaseReference products_ref = reference.getProducts();
     private Button btn_action;
-
+ ImageButton btnCaNhan;
     private EditText edit_text_product_name, edit_text_product_price, edit_text_product_quantity, edit_text_product_description;
     private ImageView image_view_product_image;
 
@@ -58,12 +59,20 @@ public class TrangThemSPMoi extends AppCompatActivity {
         }
     };
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_them_spmoi);
 
-
+        btnCaNhan = findViewById(R.id.button5);
+        btnCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            Intent intent = new Intent(TrangThemSPMoi.this, TrangAdmin.class);
+            startActivity(intent);
+            }
+        });
         mapping_client();
 
         String product_id = getIntent().getStringExtra("product_id");
@@ -118,14 +127,7 @@ public class TrangThemSPMoi extends AppCompatActivity {
             }
         });
 
-        image_button_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrangThemSPMoi.this, TrangAdmin.class);
 
-                startActivity(intent);
-            }
-        });
     }
 
     private void handleOnClickAction(String product_id) {
@@ -181,6 +183,8 @@ public class TrangThemSPMoi extends AppCompatActivity {
         this.edit_text_product_quantity = findViewById(R.id.editTextQuantity);
         this.edit_text_product_description = findViewById(R.id.editTextDescription);
         this.image_view_product_image = findViewById(R.id.imageView);
-        this.image_button_home = findViewById(R.id.button1);
+
     }
+
+
 }

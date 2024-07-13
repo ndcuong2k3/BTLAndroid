@@ -1,5 +1,6 @@
 package com.example.btlandroidnc;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseArray;
@@ -25,19 +26,30 @@ public class TrangUpdateSP extends AppCompatActivity {
 
     private final Reference reference = new Reference();
     private ListView list_view_products;
+    ImageButton btnCaNhan;
 
     private Button button_add_product, button_remove_product;
     private CheckBox checkBox;
 
     UpdateProductAdapter update_product_adapter;
 
-    ImageButton image_button_home;
+//    ImageButton image_button_home;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_update_sp);
         mapping_client();
+        btnCaNhan = findViewById(R.id.button5);
+
+        btnCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangUpdateSP.this,TrangAdmin.class);
+                startActivity(intent);
+            }
+        });
 
         DatabaseReference products_ref = reference.getProducts();
         products_ref.addValueEventListener(new ValueEventListener() {
@@ -82,21 +94,21 @@ public class TrangUpdateSP extends AppCompatActivity {
             }
         });
 
-        image_button_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrangUpdateSP.this, TrangAdmin.class);
-
-                startActivity(intent);
-            }
-        });
+//        image_button_home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TrangUpdateSP.this, TrangAdmin.class);
+//
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void mapping_client() {
         list_view_products = findViewById(R.id.products);
         button_add_product = findViewById(R.id.btn_add_product);
         button_remove_product = findViewById(R.id.btnxoa);
-        image_button_home = findViewById(R.id.button1);
+
         checkBox = findViewById(R.id.checktong);
     }
 }

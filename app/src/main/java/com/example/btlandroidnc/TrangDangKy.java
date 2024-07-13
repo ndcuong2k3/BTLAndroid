@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -48,6 +49,9 @@ public class TrangDangKy extends AppCompatActivity {
         EditText edMatKhau = findViewById(R.id.editTextPassword);
         EditText edMatKhau2 = findViewById(R.id.editTextPassword2);
         EditText edSDT = findViewById(R.id.editSDT);
+
+
+
         ImageButton btDatePicker = findViewById(R.id.buttonDatePicker);
 
         Button btDangKy = findViewById(R.id.buttonDangKy);
@@ -153,6 +157,17 @@ public class TrangDangKy extends AppCompatActivity {
                 String SDT = edSDT.getText().toString().trim();
                 String matKhau2 = edMatKhau2.getText().toString().trim();
 
+                if (username.isEmpty() || hoTen.isEmpty() || ngaySinh.isEmpty() || matKhau.isEmpty() || SDT.isEmpty() || matKhau2.isEmpty()) {
+                    showToast("Vui lòng nhập đầy đủ thông tin");
+                    return; // Dừng xử lý nếu có trường nào rỗng
+                }
+
+                // Kiểm tra mật khẩu và xác nhận mật khẩu có khớp không
+                if (!matKhau.equals(matKhau2)) {
+                    showToast("Mật khẩu không khớp");
+                    return; // Dừng xử lý nếu mật khẩu không khớp
+                }
+
                 Date convertedDate = null;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
@@ -194,4 +209,12 @@ public class TrangDangKy extends AppCompatActivity {
         });
 
     }
+    // Phương thức để hiển thị Toast tại vị trí cụ thể
+
+    private void showToast(String message) {
+        Toast toast = Toast.makeText(TrangDangKy.this, message, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100); // Đặt vị trí toast ở đầu màn hình
+        toast.show();
+    }
+
 }

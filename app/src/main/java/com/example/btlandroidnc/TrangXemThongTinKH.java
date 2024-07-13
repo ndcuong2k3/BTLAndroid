@@ -1,10 +1,13 @@
 package com.example.btlandroidnc;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,13 +34,24 @@ public class TrangXemThongTinKH extends AppCompatActivity {
     List<User> userList;
     UserAdapter adapter;
     ListView listViewUsers;
+    ImageButton btnCaNhan;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_xem_thong_tin_kh);
         // getSupportActionBar().hide();
         usersRef = FirebaseDatabase.getInstance().getReference("Users");
+        btnCaNhan = findViewById(R.id.button5);
+        btnCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangXemThongTinKH.this, TrangAdmin.class);
+                startActivity(intent);
+
+            }
+        });
 
         listViewUsers = findViewById(R.id.listViewKH);
 

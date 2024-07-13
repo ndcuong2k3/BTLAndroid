@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/lnth">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -112,7 +113,7 @@
             android:layout_marginEnd="16dp"
             android:hint="Mô tả"
             android:inputType="textMultiLine"
-            android:lines="5" />
+            android:lines="4" />
 
         <Button
             android:id="@+id/btn_action"
@@ -131,24 +132,9 @@
         android:layout_alignParentBottom="true"
         android:background="#444444"
         android:gravity="center"
-        android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon_home"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 1"
-            android:layout_margin="8dp"/>
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:src="@drawable/icon_home1"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 2"
-            android:layout_margin="8dp"
-            android:paddingStart="15dp"/>
+        android:orientation="horizontal"
+        >
+
 
         <ImageButton
             android:id="@+id/button5"

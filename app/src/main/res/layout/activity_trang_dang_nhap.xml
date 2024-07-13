@@ -25,7 +25,7 @@
         android:layout_height="48dp"
         android:layout_below="@id/textViewLogin"
         android:layout_marginTop="16dp"
-        android:hint="Nhập tài khoản của bạn"
+        android:hint="Nhập email"
         android:padding="10dp"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -47,47 +47,79 @@
         android:id="@+id/textViewcheckDN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text=" .    "
         android:textColor="#EF1A0A"
-        android:layout_below="@id/textViewForgotPassword"
+        android:layout_below="@id/editTextPassword"
         android:layout_marginTop="6dp"
         android:layout_marginStart="18dp"
         android:textSize="20dp"/>
 
-    <TextView
-        android:id="@+id/textViewForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="20.4dp"
-        android:text="Quên mật khẩu"
-        android:textColor="#000000"
-        android:textSize="20dp" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textViewForgotPassword"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Quên mật khẩu"-->
+    <!--        android:textColor="#2ecc71"-->
+    <!--        android:layout_below="@id/editTextPassword"-->
+    <!--        android:layout_marginTop="6dp"-->
+    <!--        android:layout_marginStart="18dp"-->
+    <!--        android:textSize="20dp"/>-->
 
-    <Button
-        android:id="@+id/textViewRegister"
-        android:layout_width="wrap_content"
+    <!--    <Button-->
+    <!--        android:id="@+id/textViewRegister"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Đăng ký"-->
+    <!--        android:textColor="#2ecc71"-->
+    <!--        android:layout_below="@id/editTextPassword"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginTop="6dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:textSize="20dp" />-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đăng ký"
-        android:textColor="#000000"
-        android:backgroundTint="#EBEBEB"
-        android:layout_below="@id/editTextPassword"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20dp" />
+        android:layout_below="@+id/editTextPassword"
+        android:id="@+id/dnhapp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Bạn chưa có tài khoản     "
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:fontFamily="@font/archivonarrow"
+            android:textSize="20dp">
+
+        </TextView>
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPassword2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="Đăng ký"
+            android:textColor="@color/blue"
+            android:textSize="20dp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_below="@id/textViewForgotPassword"
+        android:layout_below="@id/dnhapp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="18dp"
         android:backgroundTint="#EBEBEB"
-        android:text="Đăng nhập"
-        android:textColor="#000000"/>
+        android:textColor="@color/black"
+        android:text="Đăng nhập" />
 
 
 </RelativeLayout>

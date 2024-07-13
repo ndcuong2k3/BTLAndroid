@@ -60,7 +60,7 @@ public class UpdateProductAdapter extends ArrayAdapter<Product> {
                 load(item.getImage())
                 .into(image_item);
 
-        description_item.setText(item.getDescription());
+        description_item.setText(item.getName());
 
         btn_update_item.setOnClickListener((new View.OnClickListener() {
             @Override

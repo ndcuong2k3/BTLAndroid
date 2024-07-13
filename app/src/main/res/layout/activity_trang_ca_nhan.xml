@@ -174,7 +174,7 @@
             android:layout_margin="8dp"
             android:paddingStart="15dp"/>
         <ImageButton
-            android:id="@+id/button3"
+            android:id="@+id/buttontb"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:src="@drawable/icon_home2"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -34,8 +35,9 @@ public class TrangDuyetDonHang extends AppCompatActivity {
     CheckBox checkBox;
     ListView listView;
     Button btDuyet,btXoa;
+    ImageButton btnCaNhan;
     InvoiceAdapter invoiceAdapter;
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,7 @@ public class TrangDuyetDonHang extends AppCompatActivity {
         }
         btDuyet= findViewById(R.id.btDuyet);
         btXoa = findViewById(R.id.btXoa);
+        btnCaNhan = findViewById(R.id.button5);
         usersRef = FirebaseDatabase.getInstance().getReference("Invoices");
         listView=findViewById(R.id.invoices);
         checkBox = findViewById(R.id.checktong);
@@ -82,6 +85,14 @@ public class TrangDuyetDonHang extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 invoiceAdapter.checkAll(checkBox.isChecked(),invoiceAdapter.isCheckedList.size());
+            }
+        });
+
+        btnCaNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrangDuyetDonHang.this, TrangAdmin.class);
+                startActivity(intent);
             }
         });
 

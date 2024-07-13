@@ -49,7 +49,7 @@
                 android:background="@drawable/edittext_bg"
                 android:text="Admin"
                 android:gravity="center"
-                android:textColor="#444444"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
     </RelativeLayout>
@@ -58,70 +58,65 @@
         android:id="@+id/btUpdateSp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Update sản phẩm"
+        android:text="Thêm/ Cập nhật sản phẩm"
         android:drawableLeft="@drawable/update"
         android:paddingStart="20dp"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textColor="@color/black"
-        android:background="#ffffff"
-        android:fontFamily="@font/svn_aleo"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/archivonarrow"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:textAllCaps="false"
-        android:gravity="center_vertical|start"
-        android:drawableRight="@drawable/icon_next"
-        android:layout_marginTop="10dp"/>
+        android:gravity="bottom"/>
 
     <Button
         android:id="@+id/btXemTTKhachHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:text="Quản lý khách hàng"
         android:drawableLeft="@drawable/profile"
-        android:drawableRight="@drawable/icon_next"
-        android:fontFamily="@font/svn_aleo"
-        android:gravity="center_vertical|start"
         android:paddingStart="20dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/archivonarrow"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
-        android:text=" Xem thông tin khách hàng"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:gravity="bottom" />
 
     <Button
         android:id="@+id/btDuyetDonHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
         android:drawableLeft="@drawable/icon_donhangdamua"
-        android:drawableRight="@drawable/icon_next"
-        android:fontFamily="@font/svn_aleo"
-        android:gravity="center_vertical|start"
+        android:text=" Duyệt đơn hàng"
         android:paddingStart="20dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/archivonarrow"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
-        android:text=" Xử lý đơn hàng"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:gravity="bottom" />
+
     <Button
         android:id="@+id/btDangXuatAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/logout"
-        android:drawableRight="@drawable/icon_next"
-        android:drawablePadding="10dp"
-        android:fontFamily="@font/svn_aleo"
-        android:gravity="center_vertical|start"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/archivonarrow"
+        android:gravity="bottom"
         android:paddingStart="20dp"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
-        android:text="Đăng xuất"
+        android:text=" Đăng xuất"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:drawableLeft="@drawable/logout"
+        android:textSize="25dp"/>
 
 
     <LinearLayout
@@ -139,23 +134,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_gravity="bottom">
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon_home"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 1"
-            android:layout_margin="8dp"/>
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:src="@drawable/icon_home1"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 2"
-            android:layout_margin="8dp"
-            android:paddingStart="15dp"/>
+
 
         <ImageButton
             android:id="@+id/button5"

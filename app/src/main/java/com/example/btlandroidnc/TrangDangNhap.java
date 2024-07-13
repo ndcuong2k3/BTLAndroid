@@ -36,7 +36,7 @@ public class TrangDangNhap extends AppCompatActivity {
         edTK = findViewById(R.id.editTextUsername) ;
         edMK = findViewById(R.id.editTextPassword);
         Button btDangNhap = findViewById(R.id.buttonLogin);
-        Button btDangKy = findViewById(R.id.textViewRegister);
+        Button btDangKy = findViewById(R.id.btnRegister);
 
 
         txtCheck = findViewById(R.id.textViewcheckDN);

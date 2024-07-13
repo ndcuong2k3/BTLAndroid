@@ -4,7 +4,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFDE7">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"

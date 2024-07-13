@@ -1,6 +1,8 @@
 package com.example.btlandroidnc;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,8 +40,8 @@ public class TrangAdmin extends AppCompatActivity {
             public void onClick(View v) {
                 // Xóa dữ liệu người dùng đã lưu (nếu có)
                 // Ví dụ: clear SharedPreferences
-                // SharedPreferences sharedpreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
-                // sharedpreferences.edit().clear().apply();
+                 SharedPreferences sharedpreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
+                 sharedpreferences.edit().clear().apply();
 
                 Intent intent = new Intent(TrangAdmin.this, TrangDangNhap.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

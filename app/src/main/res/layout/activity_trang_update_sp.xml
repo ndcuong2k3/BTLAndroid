@@ -65,11 +65,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_toEndOf="@id/checktong"
-                android:text="Ngừng bán"
+                android:text="Xóa"
                 android:textSize="20dp"
+                android:backgroundTint="#EBEBEB"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
-                android:layout_marginStart="110dp"/>
+                android:layout_marginStart="150dp"/>
             <Button
                 android:id="@+id/btn_add_product"
                 android:layout_width="wrap_content"
@@ -77,6 +78,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Thêm"
                 android:textSize="20dp"
+                android:backgroundTint="#EBEBEB"
                 android:textColor="@color/black"
                 android:textAllCaps="false" />
         </RelativeLayout>
@@ -93,41 +95,7 @@
         android:background="#444444"
         android:gravity="center"
         android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon_home"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 1"
-            android:layout_margin="8dp"/>
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:src="@drawable/icon_home1"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 2"
-            android:layout_margin="8dp"
-            android:paddingStart="15dp"/>
-        <ImageButton
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:src="@drawable/icon_home2"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 3"
-            android:layout_margin="8dp"
-            android:paddingStart="15dp"/>
-        <ImageButton
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:src="@drawable/icon_home4"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 4"
-            android:layout_margin="8dp"
-            android:paddingStart="15dp"/>
+
 
         <ImageButton
             android:id="@+id/button5"

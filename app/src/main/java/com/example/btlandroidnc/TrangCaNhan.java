@@ -43,7 +43,7 @@ public class TrangCaNhan extends AppCompatActivity {
         sharedPreferences= getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         String myId = sharedPreferences.getString("id", "-1");
         usersRef = FirebaseDatabase.getInstance().getReference("Users").child(myId);
-        bt_ThongBao = findViewById(R.id.button3);
+        bt_ThongBao = findViewById(R.id.buttontb);
         bt_TTCaNhan = findViewById(R.id.button5);
         bt_KhuyenMai = findViewById(R.id.button2);
         bt_GioHang = findViewById(R.id.button4);

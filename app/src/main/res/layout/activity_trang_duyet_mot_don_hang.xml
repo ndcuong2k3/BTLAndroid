@@ -360,24 +360,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
-            android:layout_margin="8dp"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 1"
-            android:src="@drawable/icon_home" />
 
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_margin="8dp"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Button 2"
-            android:paddingStart="15dp"
-            android:src="@drawable/icon_home1" />
 
         <ImageButton
             android:id="@+id/button5"

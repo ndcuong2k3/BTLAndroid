@@ -34,8 +34,7 @@
 
         </activity>
         <activity android:name=".ChinhSuaThongTinCaNhan"
-            android:exported="true"
-            android:theme="@style/Theme.BTLAndroidNC"></activity>
+            android:theme="@style/Theme.BTLAndroidNC"/>
 
         <activity
             android:name=".TrangChu"
@@ -65,6 +64,8 @@
         <activity
             android:name=".TrangGioHang"
             android:theme="@style/Theme.BTLAndroidNC" />
+
+
 
         <activity
             android:name=".TrangCTSP"
