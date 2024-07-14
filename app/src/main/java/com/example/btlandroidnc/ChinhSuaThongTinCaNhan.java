@@ -1,12 +1,16 @@
 package com.example.btlandroidnc;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,13 +29,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
     DatabaseReference usersRef;
     Button btnLuu, btnHuy;
-    EditText txtHovaTen, txtSDT, txtEmail, txtMK;
+    EditText txtHovaTen, txtSDT, txtEmail, txtMK, txtNS;
     TextView profileName;
     SharedPreferences sharedPreferences;
     ImageButton bt_KhuyenMai, bt_ThongBao, bt_GioHang, bt_TTCaNhan, btTrangChu;
+    DatePickerDialog datePickerDialog;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,6 +52,46 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        ImageButton btDatePicker = findViewById(R.id.buttonDatePicker);
+
+        btDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+                // Khởi tạo DatePickerDialog và thiết lập sự kiện lắng nghe
+                datePickerDialog = new DatePickerDialog(ChinhSuaThongTinCaNhan.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                // Xử lý khi người dùng chọn ngày
+                                String selectedDate = "";
+                                String m = "", d = "";
+                                if (month < 9) {
+                                    m = "0" + String.valueOf(month + 1);
+                                } else {
+                                    m = String.valueOf(month + 1);
+                                }
+                                if (dayOfMonth <= 9) {
+                                    d = "0" + String.valueOf(dayOfMonth);
+                                } else {
+                                    d = String.valueOf(dayOfMonth);
+                                }
+                                selectedDate = d + "/" + m + "/" + year;
+                                Toast.makeText(ChinhSuaThongTinCaNhan.this, "Ngày đã chọn: " + selectedDate, Toast.LENGTH_SHORT).show();
+                                txtNS.setText(selectedDate);
+                            }
+                        }, year, month, dayOfMonth);
+
+                // Hiển thị DatePickerDialog
+                datePickerDialog.show();
+                Button positiveButton = datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE);
+                positiveButton.setTextColor(Color.RED);
+            }
+        });
 
         sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
         String myId = sharedPreferences.getString("id", "-1");
@@ -57,6 +108,7 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
         bt_GioHang = findViewById(R.id.button4);
         btTrangChu = findViewById(R.id.button1);
         txtMK = findViewById(R.id.edMatKhau);
+        txtNS = findViewById(R.id.editNgaysinh);
 
         usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,6 +120,16 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
                     txtEmail.setText(user.getEmail());
                     txtSDT.setText(user.getPhone());
                     txtMK.setText(user.getPassword());
+
+                    DataSnapshot dateOfBirthSnapshot = dataSnapshot.child("date_of_birth");
+                    if (dateOfBirthSnapshot.exists()) {
+                        int day = dateOfBirthSnapshot.child("day").getValue(Integer.class);
+                        int month = dateOfBirthSnapshot.child("month").getValue(Integer.class);
+                        int year = dateOfBirthSnapshot.child("year").getValue(Integer.class);
+
+                        String formattedDate = String.format(Locale.getDefault(), "%02d/%02d/%d", day, month, year);
+                        txtNS.setText(formattedDate);
+                    }
 
                 } else {
                     Toast.makeText(ChinhSuaThongTinCaNhan.this, "User data is null", Toast.LENGTH_SHORT).show();
@@ -87,7 +149,27 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
                 String sdt = txtSDT.getText().toString().trim();
                 String email = txtEmail.getText().toString().trim();
                 String mk = txtMK.getText().toString().trim();
+                String ns = txtNS.getText().toString().trim();
                 String id = email.replace(".","");
+
+                Date convertedDate = null;
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+                try {
+                    // Chuyển đổi chuỗi thành đối tượng Date
+                    convertedDate = dateFormat.parse(ns);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    // Xử lý khi có lỗi trong quá trình chuyển đổi
+                }
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(convertedDate);
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH) + 1;
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                calendar.set(year, month, day);
+                Date date = calendar.getTime();
+                Log.d("DateDK", String.valueOf(date));
 
                 if (hoVaTen.isEmpty() || sdt.isEmpty() || email.isEmpty() || mk.isEmpty()) {
                     Toast.makeText(ChinhSuaThongTinCaNhan.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
@@ -125,6 +207,9 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
                             usersRef.child("phone").setValue(sdt);
                             usersRef.child("email").setValue(email);
                             usersRef.child("id").setValue(id);
+                            usersRef.child("date_of_birth").child("day").setValue(day);
+                            usersRef.child("date_of_birth").child("month").setValue(month);
+                            usersRef.child("date_of_birth").child("year").setValue(year);
                             usersRef.child("password").setValue(mk)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override

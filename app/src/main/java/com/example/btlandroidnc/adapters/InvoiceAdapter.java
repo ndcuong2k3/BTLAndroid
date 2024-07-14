@@ -93,8 +93,7 @@ public class InvoiceAdapter extends ArrayAdapter<Invoice> {
                 textViewTongTien.setText(format.format(invoice.getTotal()));
 //                textViewTongTien.setText(String.valueOf( invoice.getTotal()));
                 textViewNgayDat.setText(String.valueOf(invoice.getCreate_at().getDate())+"/"+
-                        String.valueOf(invoice.getCreate_at().getMonth())+"/"+
-                        String.valueOf(invoice.getCreate_at().getYear())
+                        String.valueOf(invoice.getCreate_at().getMonth() + 1)
                 );
 
             }

@@ -664,8 +664,16 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                long total = snapshot.child("total").getValue(Long.class);
-                long discount = snapshot.child("discount").getValue(Long.class);
+                Long total = snapshot.child("total").getValue(Long.class);
+                Long discount = snapshot.child("discount").getValue(Long.class);
+
+                if (total == null) {
+                    total = 0L; // Giá trị mặc định nếu total là null
+                }
+                if (discount == null) {
+                    discount = 0L; // Giá trị mặc định nếu discount là null
+                }
+
                 txtTongTien.setText(String.valueOf(total + discount) + "đ");
                 txtThanhTien.setText(String.valueOf(total) + "đ");
                 txtGiamGia.setText(String.valueOf(discount) + "đ");
@@ -723,6 +731,7 @@ public class TrangDuyetMotDonHang extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("TrangDuyetMotDonHang", "Lỗi khi đọc dữ liệu hóa đơn: " + error.getMessage());
             }
+
         });
 
         btnCaNhan.setOnClickListener(new View.OnClickListener() {

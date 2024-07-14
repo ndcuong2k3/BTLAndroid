@@ -27,7 +27,7 @@ public class User {
 
 
 
-    public User(String id, String name, String email, String password, Date date_of_birth, String phone, ArrayList<Voucher> vouchers, ArrayList<User_Notification> user_notifications) {
+    public User(String id, String name, String email, String password, Date date_of_birth, String phone, ArrayList<Voucher> vouchers, ArrayList<User_Notification> user_notifications, ArrayList<Voucher> arrayList) {
         this.id = id;
         this.name = name;
         this.email = email;

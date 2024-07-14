@@ -69,7 +69,7 @@ public class TrangXemThongTinKH extends AppCompatActivity {
             }
         });
 
-        // Lắng nghe sự thay đổi trên Firebase Database
+
         // Lắng nghe sự thay đổi trên Firebase Database
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -91,7 +91,7 @@ public class TrangXemThongTinKH extends AppCompatActivity {
                     // Kiểm tra xem có thông tin về ngày sinh không
                     DataSnapshot dobSnapshot = snapshot.child("date_of_birth");
                     if (dobSnapshot.exists()) {
-                        Long dayValue = dobSnapshot.child("date").getValue(Long.class);
+                        Long dayValue = dobSnapshot.child("day").getValue(Long.class);
                         Long monthValue = dobSnapshot.child("month").getValue(Long.class);
                         Long yearValue = dobSnapshot.child("year").getValue(Long.class);
 

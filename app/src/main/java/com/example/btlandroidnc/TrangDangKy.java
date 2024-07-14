@@ -170,11 +170,20 @@ public class TrangDangKy extends AppCompatActivity {
                 ArrayList<Voucher> arrayList = new ArrayList<>();
                 Voucher voucher = new Voucher("1", "New User", "Chao mung ban moi", "image", 100f, 0f);
                 arrayList.add(voucher);
-                User user = new User(idUser, hoTen, username, matKhau, date, SDT, arrayList, user_notifications);
-
+//                User user = new User(idUser, hoTen, username, matKhau, date, SDT, arrayList, user_notifications);
+                User user = new User(idUser, hoTen, username, matKhau, date, SDT, arrayList, user_notifications,arrayList);
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-                databaseReference.child(idUser).setValue(user);
-
+//                databaseReference.child(idUser).setValue(user);
+                databaseReference.child(idUser).child("id").setValue(idUser);
+                databaseReference.child(idUser).child("name").setValue(user.getName());
+                databaseReference.child(idUser).child("email").setValue(user.getEmail());
+                databaseReference.child(idUser).child("phone").setValue(user.getPhone());
+                databaseReference.child(idUser).child("password").setValue(user.getPassword());
+                databaseReference.child(idUser).child("vouchers").setValue(arrayList);
+                databaseReference.child(idUser).child("user_notifications").setValue(user_notifications);
+                databaseReference.child(idUser).child("date_of_birth").child("day").setValue(day);
+                databaseReference.child(idUser).child("date_of_birth").child("month").setValue(month);
+                databaseReference.child(idUser).child("date_of_birth").child("year").setValue(year);
                 Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(TrangDangKy.this, TrangDangNhap.class);
                 startActivity(intent);
@@ -185,10 +194,10 @@ public class TrangDangKy extends AppCompatActivity {
 
 
     private void showToast(String message) {
-//        Toast toast = Toast.makeText(TrangDangKy.this, message, Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(TrangDangKy.this, message, Toast.LENGTH_SHORT);
 //        toast.setGravity(Gravity.CENTER, 0, 0); // Tăng offset y
 //
-//        toast.show();
+        toast.show();
     }
 
     private boolean isValidPhoneNumber(String phoneNumber) {

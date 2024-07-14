@@ -162,6 +162,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Ngày sinh:       "
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/archivonarrow"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText
+                    android:id="@+id/editNgaysinh"
+                    android:layout_width="220dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="Nhap mat khau"
+                    android:fontFamily="@font/archivonarrow"/>
+
+                <ImageButton
+                    android:id="@+id/buttonDatePicker"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_below="@id/editChonNgaysinh"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="Chọn ngày sinh"
+                    android:src="@drawable/calender_2"
+                    android:scaleType="centerCrop"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Mật khẩu:        "
                     android:textColor="@color/black"
                     android:fontFamily="@font/archivonarrow"

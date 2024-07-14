@@ -86,7 +86,7 @@ public class TrangChu extends AppCompatActivity {
         users_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                textView.setText(snapshot.child("email").getValue(String.class));
+                textView.setText(snapshot.child("name").getValue(String.class));
             }
 
             @Override
