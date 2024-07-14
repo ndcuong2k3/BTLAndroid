@@ -12,45 +12,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <RelativeLayout
+            android:id="@+id/headerSection"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="#444444">
-            <RelativeLayout
-                android:layout_width="350dp"
-                android:layout_height="90dp"
-                android:id="@+id/rlt1">
-                <TextView
-                    android:id="@+id/membershipLabel"
-                    android:layout_width="107dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="35dp"
-                    android:background="@drawable/edittext_bg"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:text="Admin"
-                    android:textColor="#444444"
-                    android:textSize="16sp" />
-                <TextView
-                    android:id="@+id/profileName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:gravity="end"
-                    android:layout_marginTop="30dp"
-                    android:layout_toEndOf="@id/membershipLabel"
-                    android:textColor="#FFFDE7"
-                    android:textSize="24sp" />
-            </RelativeLayout>
+            android:background="#444444"
+            app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_toEndOf="@id/rlt1"
-                android:contentDescription="Hình đại diện"
-                android:src="@drawable/default_profile_image" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logoshopcc"
+                android:layout_centerInParent="true" />
         </RelativeLayout>
         <ScrollView
             android:layout_width="match_parent"
@@ -64,14 +36,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Thông tin khách hàng"
-                    android:paddingStart="0dp"
+                    android:paddingStart="20dp"
                     android:textSize="20dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="7dp"
                     android:paddingBottom="7dp"
                     android:id="@+id/ThongTinKH"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_marginTop="10dp">
                 </TextView>
@@ -87,8 +58,8 @@
                         android:textSize="17sp"
                         android:backgroundTint="@color/white"
                         android:paddingStart="90dp"
-
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/textViewSuaTen"
@@ -98,7 +69,7 @@
                         android:textSize="17sp"
                         android:backgroundTint="@color/white"
                         android:padding="0dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@id/SuaTen"/>
                 </RelativeLayout>
@@ -112,7 +83,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:backgroundTint="@color/white"
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:paddingStart="90dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
@@ -125,7 +97,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:backgroundTint="@color/white"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
                         android:text="0123456789"
@@ -143,7 +115,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:paddingStart="90dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
@@ -156,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
                         android:backgroundTint="@color/white"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
                         android:text=""
@@ -177,7 +150,8 @@
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
                         android:paddingStart="90dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/textViewDiaChiMĐ"
@@ -190,7 +164,8 @@
                         android:paddingBottom="11dp"
                         android:paddingStart="90dp"
                         android:backgroundTint="@color/white"
-                        android:fontFamily="@font/svn_aleo"
+
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"/>
                 </RelativeLayout>
                 <TextView
@@ -201,11 +176,10 @@
                     android:paddingStart="20dp"
                     android:textSize="20dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="7dp"
                     android:paddingBottom="7dp"
                     android:id="@+id/ThongTinCaNhan"
-                    android:textStyle="bold"
                     android:textColor="@color/black">
                 </TextView>
 
@@ -222,11 +196,11 @@
                     android:paddingStart="20dp"
                     android:textSize="17dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/svn_aleo"
+                    android:fontFamily="@font/anton"
                     android:paddingTop="7dp"
                     android:paddingBottom="7dp"
                     android:id="@+id/ChiTietThanhToan"
-                    android:textStyle="bold"
+
                     android:textColor="@color/black">
                 </TextView>
                 <RelativeLayout
@@ -242,7 +216,8 @@
                         android:paddingStart="200dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:background="@color/white" />
                     <EditText
@@ -255,7 +230,7 @@
                         android:backgroundTint="@color/white"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@id/textViewTongTien"
                         android:layout_marginEnd="5dp"/>
@@ -273,7 +248,8 @@
                         android:paddingStart="200dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:background="@color/white"/>
                     <EditText
@@ -286,7 +262,7 @@
                         android:backgroundTint="@color/white"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@id/textViewGiamGia"
                         android:layout_marginEnd="5dp"/>
@@ -304,7 +280,8 @@
                         android:paddingStart="200dp"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
+                        android:textStyle="bold"
                         android:textColor="@color/black"
                         android:background="@color/white"/>
                     <EditText
@@ -317,7 +294,7 @@
                         android:backgroundTint="@color/white"
                         android:paddingTop="15dp"
                         android:paddingBottom="11dp"
-                        android:fontFamily="@font/svn_aleo"
+                        android:fontFamily="@font/archivonarrow"
                         android:textColor="@color/black"
                         android:layout_toEndOf="@id/textViewThanhTien"
                         android:layout_marginEnd="5dp"/>

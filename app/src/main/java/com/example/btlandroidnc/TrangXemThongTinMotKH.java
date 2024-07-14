@@ -25,7 +25,7 @@ public class TrangXemThongTinMotKH extends AppCompatActivity {
     DatabaseReference usersRef;
     int frontId=-1;
     SharedPreferences sharedPreferences;
-    TextView txtEmail,txtSDT,txtNgaySinh,txtMember,txtProFile;
+    TextView txtEmail,txtSDT,txtNgaySinh;
     Button btnXoa;
     ImageButton btnCaNhan;
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
@@ -60,12 +60,11 @@ public class TrangXemThongTinMotKH extends AppCompatActivity {
         txtEmail=findViewById(R.id.textViewEmail);
         txtSDT=findViewById(R.id.textViewSDT);
 //        txtNgaySinh=findViewById(R.id.textViewNgaySinh);
-        txtMember = findViewById(R.id.membershipLabel);
-        txtProFile = findViewById(R.id.profileName);
+
         btnXoa = findViewById(R.id.btnXoa);
 
         //if(id=="-1")
-        txtMember.setText("USER");
+
 
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,10 +102,10 @@ public class TrangXemThongTinMotKH extends AppCompatActivity {
 //                    );
 
 
-                    if(frontId>=0)
-                        txtProFile.setText(dataSnapshot.child("email").getValue(String.class).substring(0,frontId));
-                    else
-                        txtProFile.setText(dataSnapshot.child("email").getValue(String.class));
+//                    if(frontId>=0)
+//                        txtProFile.setText(dataSnapshot.child("email").getValue(String.class).substring(0,frontId));
+//                    else
+//                        txtProFile.setText(dataSnapshot.child("email").getValue(String.class));
                 }
             }
 

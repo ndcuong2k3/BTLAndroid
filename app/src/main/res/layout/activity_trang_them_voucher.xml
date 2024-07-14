@@ -5,18 +5,32 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="670dp"
+        android:id="@+id/scrollView">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#444444">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logoshopcc"
+                    android:layout_centerInParent="true"
+                    >
 
+                </ImageView>
+            </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add New Voucher"
+                android:text="Thêm voucher mới"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -26,44 +40,69 @@
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Title"
+                android:hint="Tiêu đề"
                 android:inputType="text"/>
 
             <EditText
                 android:id="@+id/editTextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Description"
+                android:hint="Mô tả"
                 android:inputType="text"/>
 
-            <EditText
-                android:id="@+id/editTextImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Image URL"
-                android:inputType="text"/>
+<!--            <EditText-->
+<!--                android:id="@+id/editTextImage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Image URL"-->
+<!--                android:inputType="text"/>-->
 
             <EditText
                 android:id="@+id/editTextValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Value"
+                android:hint="Giá trị"
                 android:inputType="numberDecimal"/>
 
             <EditText
                 android:id="@+id/editTextCondition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Condition"
+                android:hint="Điều kiện"
                 android:inputType="numberDecimal"/>
 
             <Button
                 android:id="@+id/buttonSave"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:layout_marginLeft="150dp"
+                android:text="Thêm"
+                android:backgroundTint="#EBEBEB"
+                android:textColor="@color/black"
                 android:layout_marginTop="16dp"/>
 
         </LinearLayout>
+
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#444444"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_below="@id/scrollView"
+        >
+
+
+        <ImageButton
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_home5"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Button 5"
+            android:layout_margin="8dp"
+            android:paddingStart="15dp"/>
+    </LinearLayout>
 </RelativeLayout>

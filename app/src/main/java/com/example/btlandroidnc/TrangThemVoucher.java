@@ -29,7 +29,7 @@ public class TrangThemVoucher extends AppCompatActivity {
 
         editTextTitle = findViewById(R.id.editTextTitle);
         editTextDescription = findViewById(R.id.editTextDescription);
-        editTextImage = findViewById(R.id.editTextImage);
+//        editTextImage = findViewById(R.id.editTextImage);
         editTextValue = findViewById(R.id.editTextValue);
         editTextCondition = findViewById(R.id.editTextCondition);
         buttonSave = findViewById(R.id.buttonSave);
@@ -45,7 +45,7 @@ public class TrangThemVoucher extends AppCompatActivity {
     private void saveVoucher() {
         String title = editTextTitle.getText().toString().trim();
         String description = editTextDescription.getText().toString().trim();
-        String image = editTextImage.getText().toString().trim();
+        String image = "image";
         float value = Float.parseFloat(editTextValue.getText().toString().trim());
         float condition = Float.parseFloat(editTextCondition.getText().toString().trim());
         Log.d("VoucherData", "Title: " + title);

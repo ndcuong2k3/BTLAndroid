@@ -34,9 +34,9 @@
 
                 android:text="ĐƠN HÀNG ĐÃ ĐƯỢC DUYỆT"
                 android:textColor="#BA0909"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/svn_amsi_cond_regular"/>
+                android:textSize="18dp"
+
+                android:fontFamily="@font/anton"/>
             <TextView
                 android:id="@+id/textTB"
                 android:layout_marginLeft="5dp"
@@ -45,8 +45,8 @@
                 android:text="Kiện hàng NPP0254859 của đơn hàng 247587486747 đã được giao thành công đến bạn."
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/svn_banana_chip_muffins"/>
+
+                android:fontFamily="@font/archivonarrow"/>
         </LinearLayout>
 
 

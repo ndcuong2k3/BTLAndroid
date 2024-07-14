@@ -115,7 +115,7 @@
         android:paddingBottom="7dp"
         android:text="Thêm voucher"
         android:textAllCaps="false"
-        android:drawableLeft="@drawable/logout"
+        android:drawableLeft="@drawable/voch_icon2"
         android:textSize="25dp"/>
     <Button
         android:id="@+id/btDangXuatAdmin"

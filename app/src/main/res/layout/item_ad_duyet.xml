@@ -12,11 +12,12 @@
         android:layout_marginTop="20dp"></CheckBox>
 
     <TextView
-        android:text="#2021"
+        android:text="#2024"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="16dp"
+        android:fontFamily="@font/archivonarrow"
         android:textColor="@color/black"
         android:id="@+id/madonhang"/>
 
@@ -29,6 +30,8 @@
         android:text="0123456789"
         android:textColor="@color/black"
         android:textSize="16dp"
+        android:fontFamily="@font/archivonarrow"
+
         android:textAlignment="center"/>
     <TextView
         android:id="@+id/ngaydat"
@@ -38,6 +41,8 @@
         android:layout_marginTop="20dp"
         android:text="10/11/2024"
         android:textColor="@color/black"
+        android:fontFamily="@font/archivonarrow"
+
         android:textSize="16dp"
         android:textAlignment="center"/>
 
