@@ -88,8 +88,8 @@ public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
 
                 // Hiển thị DatePickerDialog
                 datePickerDialog.show();
-                Button positiveButton = datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE);
-                positiveButton.setTextColor(Color.RED);
+//                Button positiveButton = datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE);
+//                positiveButton.setTextColor(Color.RED);
             }
         });
 

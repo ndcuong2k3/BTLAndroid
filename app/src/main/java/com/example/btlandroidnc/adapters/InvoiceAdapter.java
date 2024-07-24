@@ -50,14 +50,19 @@ public class InvoiceAdapter extends ArrayAdapter<Invoice> {
         if(mResource == R.layout.item_ad_duyet){
 
             TextView textViewName = itemView.findViewById(R.id.invoice_description);
-
+            TextView tv = itemView.findViewById(R.id.ngaydat);
 
             Invoice  invoice = getItem(position);
 
             if (invoice != null) {
-                textViewName.setText(String.valueOf( invoice.getTotal()));
+                NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+                format.setCurrency(Currency.getInstance("VND"));
+                textViewName.setText(format.format(invoice.getTotal()));
+                tv.setText(String.valueOf(invoice.getCreate_at().getDate())+"/"+
+                                String.valueOf(invoice.getCreate_at().getMonth() + 1));
+//                textViewName.setText(String.valueOf( invoice.getTotal()));
                 // textViewName.setText("user.getName()");
-            }
+            };
             CheckBox checkBox = itemView.findViewById(R.id.check);
             checkBox.setChecked(isCheckedList.get(position));
             checkBox.setOnClickListener(new View.OnClickListener() {

@@ -67,7 +67,7 @@ public class TrangChu extends AppCompatActivity {
                         ArrayList<Product> products = new ArrayList<>();
                         for (DataSnapshot productSnapshot : snapshot.getChildren()) {
                             Product product = productSnapshot.getValue(Product.class);
-                            if (search_value.isEmpty() || product.getName().contains(search_value)) {
+                            if (search_value.isEmpty() || product.getName().toLowerCase().contains(search_value.toLowerCase())) {
                                 products.add(product);
                             }
                         }
@@ -82,7 +82,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Hiển thị thông tin người dùng
+
         users_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -94,7 +94,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Lấy danh sách sản phẩm từ Firebase và hiển thị trên ListView
+
         products_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -107,7 +107,6 @@ public class TrangChu extends AppCompatActivity {
                 list_view_products.setAdapter(productIndexAdapter);
 
 
-                // Xử lý khi người dùng click vào một sản phẩm trong danh sách
                 list_view_products.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -127,7 +126,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Xử lý khi người dùng click vào nút Thông báo
+
         bt_ThongBao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +135,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Xử lý khi người dùng click vào nút Thông tin cá nhân
+
         bt_TTCaNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,7 +144,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Xử lý khi người dùng click vào nút Khuyến mãi
+
         bt_KhuyenMai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,7 +153,7 @@ public class TrangChu extends AppCompatActivity {
             }
         });
 
-        // Xử lý khi người dùng click vào nút Giỏ hàng
+
         bt_GioHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

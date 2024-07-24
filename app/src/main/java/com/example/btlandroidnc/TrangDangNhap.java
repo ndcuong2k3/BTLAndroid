@@ -67,26 +67,16 @@ public class TrangDangNhap extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(ID).exists()) {
 
-                    //   if (dataSnapshot.hasChild(userId)) {
-                    //    txtCheck.setText("Tai khoản đã tồn tại");
-                    //      Log.d("TAG", "Item exists!");
-//                    } else {
-//                        txtCheck.setText("Tai khoản chưa tồn tại");
-//                        Log.d("TAG", "Item does not exist!");
-//                    }
 
                     if(dataSnapshot.child(ID).child("password").getValue(String.class).equals(edMK.getText().toString())) {
                         txtCheck.setText("Đăng nhâp thành công");
 
                         SharedPreferences sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
 
-// Mở Editor để chỉnh sửa SharedPreferences
                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-// Đặt giá trị cho key "my_key" là "my_value"
                         editor.putString("id",ID );
 
-// Lưu thay đổi
                         editor.commit();
                         if(edTK.getText().toString().equals("-1")){
                             Intent i =new Intent(TrangDangNhap.this, TrangAdmin.class);
@@ -101,13 +91,11 @@ public class TrangDangNhap extends AppCompatActivity {
 
                     }
                     else {
-                        //SharedPreferences sharedPreferences = getSharedPreferences("com.example.sharedprerences", Context.MODE_PRIVATE);
-                        //txtCheck.setText(sharedPreferences.getString("id", "-1"));
+
                         txtCheck.setText("Sai mật khẩu");
                     }
 
                 } else {
-                    // Danh sách mặt hàng trống
                     txtCheck.setText("Tai khoản chưa tồn tại");
                     Log.d("TAG", "No items found!");
                 }
@@ -122,3 +110,19 @@ public class TrangDangNhap extends AppCompatActivity {
     }
 
 }
+
+//Vấn đề chính khi lồng ListView trong ScrollView
+// là cả hai view đều cố gắng xử lý việc cuộn, dẫn đến xung đột
+// và hành vi không mong muốn.
+//
+//NestedListView giải quyết vấn đề này bằng cách:
+//
+//Hạn chế chiều cao tối đa của ListView để ngăn nó mở rộng vô hạn.
+//Đặt chiều cao của ListView thành chiều cao đã đo,
+// đảm bảo nó chiếm không gian cần thiết mà không ảnh hưởng đến ScrollView.
+//Phương pháp này cho phép ScrollView xử lý việc cuộn tổng
+// thể trong khi NestedListView quản lý việc cuộn nội dung bên trong của nó.
+//
+//Lưu ý: Mặc dù giải pháp này hiệu quả trong nhiều trường hợp,
+// nhưng nó có thể không lý tưởng cho tất cả các tình huống.
+// Các phương pháp tiếp cận thay thế như sử dụng RecyclerView với layout manager phù hợp hoặc triển khai view tùy chỉnh cũng có thể được xem xét tùy thuộc vào yêu cầu cụ thể.
